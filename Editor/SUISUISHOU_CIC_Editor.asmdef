@@ -1,0 +1,16 @@
+{
+    "name": "SUISUISHOU_CIC_Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:eb2d88bcd58eadf4ea0df72d0d093ebe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
