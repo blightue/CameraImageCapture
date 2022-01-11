@@ -6,14 +6,14 @@
   "unity": "2020.1",
   "unityRelease": "0b5",
   "keywords": [
-    "keyword1",
-    "keyword2",
-    "keyword3"
+    "Camera",
+    "Image",
+    "Export"
   ],
   "author": {
-    "name": "My Company",
-    "email": "hello@example.com",
-    "url": "https://www.mycompany.com"
+    "name": "SuiSuiShou",
+    "email": "bligtue@gmail.com",
+    "url": "https://github.com/blightue"
   },
   "type": "tool",
   "hideInEditor": false
