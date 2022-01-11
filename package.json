@@ -1,8 +1,8 @@
 {
   "name": "com.suisuishou.suisuishou.cameraimagecapture",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "CameraImageCapture",
-  "description": "Capture camera image and save to specified path.",
+  "description": "Capture camera image and save to a specified path.",
   "unity": "2020.1",
   "unityRelease": "0b5",
   "keywords": [

@@ -1,8 +1,7 @@
-using System.Collections;
 using System.IO;
 using System.Threading;
 
-namespace CIC.DataSaver
+namespace CIC.Data
 {
 
     public static class DataSaver
