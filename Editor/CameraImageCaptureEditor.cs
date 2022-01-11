@@ -26,11 +26,10 @@ public class CameraImageCaptureEditor : Editor
 
     private void OnEnable()
     {
-        ResetObj();
+        Cic.InitDic();
         camera = serializedObject.FindProperty(nameof(Cic.targetCamera));
         imageRes = serializedObject.FindProperty(nameof(Cic.imageResolution));
-        //savePath = serializedObject.FindProperty(nameof(Cic.saveFolderPath));
-        fileName = serializedObject.FindProperty(nameof(Cic.FileName));
+        //fileName = serializedObject.FindProperty(nameof(Cic.fileName));
     }
 
     public override void OnInspectorGUI()
@@ -38,10 +37,9 @@ public class CameraImageCaptureEditor : Editor
         serializedObject.Update();
         EditorGUILayout.PropertyField(camera);
         EditorGUILayout.PropertyField(imageRes);
-        //EditorGUILayout.PropertyField(fileName);
         if (Cic.saveFolderPath == null || Cic.saveFolderPath.Length == 0) Cic.saveFolderPath = Application.persistentDataPath;
         Cic.saveFolderPath = EditorGUILayout.TextField("Save folder path", Cic.saveFolderPath);
-        //Cic.FileName = EditorGUILayout.TextField("File name", Cic.FileName);
+        Cic.fileName = EditorGUILayout.TextField("File name", Cic.fileName);
         Cic.isUseThreat = EditorGUILayout.Toggle("Is use threat", Cic.isUseThreat);
 
         if(GUILayout.Button("Capture and save"))
@@ -52,15 +50,5 @@ public class CameraImageCaptureEditor : Editor
 
         serializedObject.ApplyModifiedProperties();
     }
-
-    private void ResetObj()
-    {
-        if (Cic.targetCamera != null && 
-            Cic.saveFolderPath == null && 
-            Cic.saveFolderPath == "" &&
-            Cic.FileName == null &&
-            Cic.FileName == "") 
-            Cic.Reset();
-    }    
 
 }

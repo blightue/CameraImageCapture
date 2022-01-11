@@ -13,26 +13,22 @@ public class CameraImageCapture : MonoBehaviour
     public string saveFolderPath;
     public bool isUseThreat = true;
 
-    public string FileName
-    {
-        get => fileName;
-        set
-        {
-            if (value != fileName) fileName = UpdateFileName(value);
-        }
-    }
-
-    private string fileName = "cameraCaptures";
+    public string fileName;
     private Dictionary<string, FileInfors> fileInfors = new Dictionary<string, FileInfors>();
 
     public void Reset()
     {
+        targetCamera = Camera.main;
         saveFolderPath = Application.persistentDataPath;
         fileInfors = new Dictionary<string, FileInfors>();
-        FileName = "cameraCaptures";
+        fileName = "cameraCaptures";
+        Debug.Log("Reset CIC");
     }
 
-
+    public void InitDic()
+    {
+        fileInfors = new Dictionary<string, FileInfors>();
+    }
 
     public void CaptureAndSaveImage()
     {
@@ -64,6 +60,7 @@ public class CameraImageCapture : MonoBehaviour
     public void StartSaveImage(string folderPath, string fileName, Texture2D texture)
     {
         if (!FolderPathCheck(folderPath)) return;
+        fileName = UpdateFileName(fileName);
         if (!FileNameCheck(fileName)) return;
         byte[] saveData = texture.EncodeToPNG();
 
@@ -96,8 +93,10 @@ public class CameraImageCapture : MonoBehaviour
             {
                 name += "-New";
             }
-            fileInfors.Add(name, new FileInfors(saveFolderPath, 0));
+            fileInfors[name] = new FileInfors(saveFolderPath, 0);
+            Debug.Log(fileInfors[name].fileCount + fileInfors.ContainsKey(name).ToString());
         }
+        fileName = name;
         return name;
     }
 
