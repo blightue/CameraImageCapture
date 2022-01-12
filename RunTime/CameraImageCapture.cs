@@ -15,8 +15,10 @@ namespace CIC.Core
 
         public string saveFolderPath;
         public bool isUseThreat = true;
+        public bool isOverrideFile = false;
 
         public string fileName;
+
         private Dictionary<string, FileInfors> fileInfors = new Dictionary<string, FileInfors>();
 
         public void Reset()
@@ -88,6 +90,11 @@ namespace CIC.Core
         {
             if (!fileInfors.ContainsKey(name))
             {
+                if (isOverrideFile)
+                {
+                    fileInfors[name] = new FileInfors(saveFolderPath, 0);
+                    return name;
+                }
                 while
                     (
                     PlayerPrefs.HasKey("CICFileCount" + name) &&

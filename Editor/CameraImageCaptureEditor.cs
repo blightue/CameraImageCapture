@@ -66,6 +66,7 @@ public class CameraImageCaptureEditor : Editor
         EditorGUILayout.Space();
 
         Cic.isUseThreat = EditorGUILayout.Toggle("Write in threat", Cic.isUseThreat);
+        Cic.isOverrideFile = EditorGUILayout.Toggle("Override file", Cic.isOverrideFile);
         EditorGUILayout.PropertyField(imageRes);
 
         if (GUILayout.Button("Capture and save"))
