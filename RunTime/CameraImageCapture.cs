@@ -14,7 +14,7 @@ namespace CIC.Core
         public Vector2Int imageResolution = new Vector2Int(512, 512);
 
         public string saveFolderPath;
-        public bool isUseThreat = true;
+        public bool isUseThread = true;
         public bool isOverrideFile = false;
 
         public string fileName;
@@ -78,7 +78,7 @@ namespace CIC.Core
             string fullpath = Path.Combine(folderPath, fileName + "-" + fileInfors[fileName].fileCount + ".png");
             fileInfors[fileName].fileCount++;
 
-            if (isUseThreat)
+            if (isUseThread)
                 DataSaver.SaveDataThreat(fullpath, saveData);
             else
                 DataSaver.SaveData(fullpath, saveData);

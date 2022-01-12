@@ -65,7 +65,7 @@ public class CameraImageCaptureEditor : Editor
 
         EditorGUILayout.Space();
 
-        Cic.isUseThreat = EditorGUILayout.Toggle("Write in threat", Cic.isUseThreat);
+        Cic.isUseThread = EditorGUILayout.Toggle("Write in thread", Cic.isUseThread);
         Cic.isOverrideFile = EditorGUILayout.Toggle("Override file", Cic.isOverrideFile);
         EditorGUILayout.PropertyField(imageRes);
 
