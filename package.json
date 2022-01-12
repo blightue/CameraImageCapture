@@ -16,5 +16,8 @@
     "url": "https://github.com/blightue"
   },
   "type": "tool",
-  "hideInEditor": false
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.jobs": "0.11.0-preview.6"
+  }
 }
