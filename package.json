@@ -1,5 +1,5 @@
 {
-  "name": "com.suisuishou.suisuishou.cameraimagecapture",
+  "name": "com.suisuishou.cameraimagecapture",
   "version": "0.1.1",
   "displayName": "CameraImageCapture",
   "description": "Capture camera image and save to a specified path.",
