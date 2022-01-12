@@ -1,5 +1,5 @@
 {
-    "name": "SUISUISHOU_CIC_Editor",
+    "name": "suisuishou.cameraimagecapture.Editor",
     "rootNamespace": "",
     "references": [
         "GUID:eb2d88bcd58eadf4ea0df72d0d093ebe"

@@ -97,7 +97,7 @@ namespace CIC.Core
                     name += "-New";
                 }
                 fileInfors[name] = new FileInfors(saveFolderPath, 0);
-                Debug.Log(fileInfors[name].fileCount + fileInfors.ContainsKey(name).ToString());
+                //Debug.Log(fileInfors[name].fileCount + fileInfors.ContainsKey(name).ToString());
             }
             fileName = name;
             return name;
