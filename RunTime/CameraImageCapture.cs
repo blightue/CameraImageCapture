@@ -14,7 +14,7 @@ namespace CIC.Core
         public Vector2Int imageResolution = new Vector2Int(512, 512);
 
         public string saveFolderPath;
-        public bool isUseThread = true;
+        public WriteFileType writeType;
         public bool isOverrideFile = false;
 
         public string fileName;
@@ -78,10 +78,18 @@ namespace CIC.Core
             string fullpath = Path.Combine(folderPath, fileName + "-" + fileInfors[fileName].fileCount + ".png");
             fileInfors[fileName].fileCount++;
 
-            if (isUseThread)
-                DataSaver.SaveDataThreat(fullpath, saveData);
-            else
-                DataSaver.SaveData(fullpath, saveData);
+            switch (writeType)
+            {
+                case WriteFileType.MainThread:
+                    DataSaver.WriteDataMain(fullpath, saveData);
+                    break;
+                case WriteFileType.Asyn:
+                    DataSaver.WriteDataTask(fullpath, saveData);
+                    break;
+                case WriteFileType.JobSystem:
+                    DataSaver.WriteDataJobS(fullpath, saveData);
+                    break;
+            }
 
             Debug.Log("Capture image save to " + fullpath);
         }

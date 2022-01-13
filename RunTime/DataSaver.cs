@@ -3,52 +3,53 @@ using System.Threading;
 using System.Text;
 using Unity.Jobs;
 using Unity.Collections;
+using UnityEngine;
 
 namespace CIC.Data
 {
 
     public static class DataSaver
     {
-        public static void SaveData(string fullPath, byte[] data)
+        public static void WriteDataMain(string fullPath, byte[] data)
         {
             File.WriteAllBytes(fullPath, data);
         }
-        public static void SaveData(string fullPath, string data)
+        public static void WriteDataMain(string fullPath, string data)
         {
             File.WriteAllText(fullPath, data);
         }
-        public static void SaveDataThreat(string fullPath, byte[] data)
+        public static void WriteDataJobS(string fullPath, byte[] data)
         {
-            //SaveJob job = new SaveJob(fullPath, data);
-            //Thread thread = new Thread(new ThreadStart(job.ExcuteBytes));
-            //thread.Start();
             WriteByteJob job = new WriteByteJob(fullPath, data);
-
         }
-        public static void SaveDataThreat(string fullPath, string data)
+        public static void WriteDataJobS(string fullPath, string data)
         {
-            //SaveJob job = new SaveJob(fullPath, data);
-            //Thread thread = new Thread(new ThreadStart(job.ExcuteText));
-            //thread.Start();
-
             WriteTextJob job = new WriteTextJob(fullPath, data);
+        }
+        public static void WriteDataTask(string fullPath, byte[] data)
+        {
+            WriteAsyncJob job = new WriteAsyncJob(fullPath, data);
+        }
+        public static void WriteDataTask(string fullPath, string data)
+        {
+            WriteAsyncJob job = new WriteAsyncJob(fullPath, data);
         }
 
 
     }
-    public class SaveJob
+    public class WriteInMainJob
     {
         public string fullPath;
         public byte[] byteData;
         public string textData;
 
-        public SaveJob(string fullPath, byte[] data)
+        public WriteInMainJob(string fullPath, byte[] data)
         {
             this.fullPath = fullPath;
             this.byteData = data;
         }
 
-        public SaveJob(string fullPath, string textData)
+        public WriteInMainJob(string fullPath, string textData)
         {
             this.fullPath = fullPath;
             this.textData = textData;
@@ -61,6 +62,43 @@ namespace CIC.Data
         public void ExcuteText()
         {
             File.WriteAllText(fullPath, textData);
+        }
+    }
+
+    public class WriteAsyncJob
+    {
+        public string fullPath;
+        public byte[] byteData;
+        public string textData;
+
+        public WriteAsyncJob(string fullPath, byte[] byteData)
+        {
+            this.fullPath = fullPath;
+            this.byteData = byteData;
+            ExcuteBytes();
+        }
+
+        public WriteAsyncJob(string fullPath, string textData)
+        {
+            this.fullPath = fullPath;
+            this.textData = textData;
+            ExcuteText();
+        }
+
+        private async void ExcuteBytes()
+        {
+            using (FileStream file = File.Open(fullPath, FileMode.OpenOrCreate))
+            {
+                file.Seek(0, SeekOrigin.End);
+                await file.WriteAsync(byteData, 0, byteData.Length);
+            }
+        }
+        private async void ExcuteText()
+        {
+            using (StreamWriter file = File.CreateText(fullPath))
+            {
+                await file.WriteAsync(textData);
+            }
         }
     }
 
@@ -82,11 +120,8 @@ namespace CIC.Data
             NativeArray<char> nativePath = new NativeArray<char>(fullPath.ToCharArray(), Allocator.TempJob);
 
             WriteJobs jobs = new WriteJobs() { fileData = nativeData, fileFullPath = nativePath };
-
-            JobHandle jobHandle = jobs.Schedule();
-
-            jobHandle.Complete();
-
+            Debug.Log(Thread.CurrentThread.Name);
+            jobs.Schedule().Complete();
             nativeData.Dispose();
             nativePath.Dispose();
         }
@@ -141,4 +176,6 @@ namespace CIC.Data
         }
 
     }
+
+    public enum WriteFileType { MainThread, Asyn, JobSystem };
 }

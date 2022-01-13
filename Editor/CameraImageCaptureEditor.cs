@@ -10,6 +10,7 @@ public class CameraImageCaptureEditor : Editor
 
     private SerializedProperty camera;
     private SerializedProperty imageRes;
+    private SerializedProperty writeType;
 
     private bool showFileSetting;
     private bool showComponents;
@@ -31,6 +32,7 @@ public class CameraImageCaptureEditor : Editor
         Cic.InitDic();
         camera = serializedObject.FindProperty(nameof(Cic.targetCamera));
         imageRes = serializedObject.FindProperty(nameof(Cic.imageResolution));
+        writeType = serializedObject.FindProperty(nameof(Cic.writeType));
 
         //fileName = serializedObject.FindProperty(nameof(Cic.fileName));
     }
@@ -65,7 +67,8 @@ public class CameraImageCaptureEditor : Editor
 
         EditorGUILayout.Space();
 
-        Cic.isUseThread = EditorGUILayout.Toggle("Write in thread", Cic.isUseThread);
+        //Cic.writeType = EditorGUILayout.Toggle("Write in thread", Cic.isUseThread);
+        EditorGUILayout.PropertyField(writeType);
         Cic.isOverrideFile = EditorGUILayout.Toggle("Override file", Cic.isOverrideFile);
         EditorGUILayout.PropertyField(imageRes);
 
