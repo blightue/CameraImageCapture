@@ -16,6 +16,7 @@ namespace CIC.Core
         public string saveFolderPath;
         public WriteFileType writeType;
         public bool isOverrideFile = false;
+        public bool isImageSerial = true;
 
         public string fileName;
 
@@ -74,8 +75,11 @@ namespace CIC.Core
                 Debug.LogWarning(string.Format("Folder path {0} do not exist"));
                 return;
             }
-
-            string fullpath = Path.Combine(folderPath, fileName + "-" + fileInfors[fileName].fileCount + ".png");
+            string fullpath;
+            if (isImageSerial)
+                fullpath = Path.Combine(folderPath, fileName + "-" + fileInfors[fileName].fileCount + ".png");
+            else
+                fullpath = Path.Combine(folderPath, fileName + ".png");
             fileInfors[fileName].fileCount++;
 
             switch (writeType)

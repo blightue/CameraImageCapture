@@ -67,7 +67,7 @@ public class CameraImageCaptureEditor : Editor
 
         EditorGUILayout.Space();
 
-        //Cic.writeType = EditorGUILayout.Toggle("Write in thread", Cic.isUseThread);
+        Cic.isImageSerial = EditorGUILayout.Toggle("Image serialized", Cic.isImageSerial);
         EditorGUILayout.PropertyField(writeType);
         Cic.isOverrideFile = EditorGUILayout.Toggle("Override file", Cic.isOverrideFile);
         EditorGUILayout.PropertyField(imageRes);
