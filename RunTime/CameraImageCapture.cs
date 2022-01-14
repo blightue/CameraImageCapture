@@ -7,6 +7,8 @@ using CIC.Data;
 namespace CIC.Core
 {
 
+    public enum ImageFormat { jpg, png, tga };
+
     [AddComponentMenu("Camera Image Capture/CameraImageCapture")]
     public class CameraImageCapture : MonoBehaviour
     {
@@ -15,6 +17,7 @@ namespace CIC.Core
 
         public string saveFolderPath;
         public WriteFileType writeType;
+        public ImageFormat imageFormat = ImageFormat.png;
         public bool isOverrideFile = false;
         public bool isImageSerial = true;
 
@@ -26,6 +29,9 @@ namespace CIC.Core
         {
             targetCamera = Camera.main;
             saveFolderPath = Application.persistentDataPath;
+            imageFormat = ImageFormat.png;
+            isOverrideFile = false;
+            isImageSerial = true;
             fileInfors = new Dictionary<string, FileInfors>();
             fileName = "cameraCaptures";
             Debug.Log("Reset CIC");
@@ -68,7 +74,22 @@ namespace CIC.Core
             if (!FolderPathCheck(folderPath)) return;
             fileName = UpdateFileName(fileName);
             if (!FileNameCheck(fileName)) return;
-            byte[] saveData = texture.EncodeToPNG();
+            byte[] saveData = null;
+            switch (imageFormat)
+            {
+                //case ImageFormat.exr:
+                //    saveData = texture.EncodeToEXR();
+                //    break;
+                case ImageFormat.jpg:
+                    saveData = texture.EncodeToJPG();
+                    break;
+                case ImageFormat.png:
+                    saveData = texture.EncodeToPNG();
+                    break;
+                case ImageFormat.tga:
+                    saveData = texture.EncodeToTGA();
+                    break;
+            }
 
             if (!Directory.Exists(folderPath))
             {
@@ -77,9 +98,9 @@ namespace CIC.Core
             }
             string fullpath;
             if (isImageSerial)
-                fullpath = Path.Combine(folderPath, fileName + "-" + fileInfors[fileName].fileCount + ".png");
+                fullpath = Path.Combine(folderPath, fileName + "-" + fileInfors[fileName].fileCount + '.' + imageFormat.ToString());
             else
-                fullpath = Path.Combine(folderPath, fileName + ".png");
+                fullpath = Path.Combine(folderPath, fileName + '.' + imageFormat.ToString());
             fileInfors[fileName].fileCount++;
 
             switch (writeType)
@@ -87,12 +108,12 @@ namespace CIC.Core
                 case WriteFileType.MainThread:
                     DataSaver.WriteDataMain(fullpath, saveData);
                     break;
-                case WriteFileType.Asyn:
+                case WriteFileType.Async:
                     DataSaver.WriteDataTask(fullpath, saveData);
                     break;
-                case WriteFileType.JobSystem:
-                    DataSaver.WriteDataJobS(fullpath, saveData);
-                    break;
+                //case WriteFileType.JobSystem:
+                //    DataSaver.WriteDataJobS(fullpath, saveData);
+                //    break;
             }
 
             Debug.Log("Capture image save to " + fullpath);
@@ -182,4 +203,5 @@ namespace CIC.Core
             }
         }
     }
+
 }
