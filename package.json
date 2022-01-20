@@ -1,6 +1,6 @@
 {
   "name": "com.suisuishou.cameraimagecapture",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "displayName": "CameraImageCapture",
   "description": "Capture camera image and save to a specified path.",
   "unity": "2020.1",
@@ -16,8 +16,5 @@
     "url": "https://github.com/blightue"
   },
   "type": "tool",
-  "hideInEditor": false,
-  "dependencies": {
-    "com.unity.jobs": "0.11.0-preview.6"
-  }
+  "hideInEditor": false
 }

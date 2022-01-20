@@ -1,9 +1,6 @@
 using System.IO;
-using System.Threading;
-using System.Text;
-using Unity.Jobs;
-using Unity.Collections;
-using UnityEngine;
+//using Unity.Jobs;
+//using Unity.Collections;
 
 namespace CIC.Data
 {
@@ -18,6 +15,8 @@ namespace CIC.Data
         {
             File.WriteAllText(fullPath, data);
         }
+        
+        /*Job System
         public static void WriteDataJobS(string fullPath, byte[] data)
         {
             WriteByteJob job = new WriteByteJob(fullPath, data);
@@ -26,6 +25,8 @@ namespace CIC.Data
         {
             WriteTextJob job = new WriteTextJob(fullPath, data);
         }
+        */
+        
         public static void WriteDataTask(string fullPath, byte[] data)
         {
             WriteAsyncJob job = new WriteAsyncJob(fullPath, data);
@@ -37,6 +38,8 @@ namespace CIC.Data
 
 
     }
+
+
     public class WriteInMainJob
     {
         public string fullPath;
@@ -102,6 +105,8 @@ namespace CIC.Data
         }
     }
 
+
+    /* Job system
     public class WriteByteJob
     {
         public string fullPath;
@@ -120,7 +125,7 @@ namespace CIC.Data
             NativeArray<char> nativePath = new NativeArray<char>(fullPath.ToCharArray(), Allocator.TempJob);
 
             WriteJobs jobs = new WriteJobs() { fileData = nativeData, fileFullPath = nativePath };
-            Debug.Log(Thread.CurrentThread.Name);
+            //Debug.Log(Thread.CurrentThread.Name);
             jobs.Schedule().Complete();
             nativeData.Dispose();
             nativePath.Dispose();
@@ -176,6 +181,12 @@ namespace CIC.Data
         }
 
     }
+    */
 
-    public enum WriteFileType { MainThread, Asyn, JobSystem };
+    public enum WriteFileType
+    {
+        MainThread,
+        Async
+            //, JobSystem
+    };
 }

@@ -11,6 +11,7 @@ public class CameraImageCaptureEditor : Editor
     private SerializedProperty camera;
     private SerializedProperty imageRes;
     private SerializedProperty writeType;
+    private SerializedProperty imageFormat;
 
     private bool showFileSetting;
     private bool showComponents;
@@ -33,6 +34,7 @@ public class CameraImageCaptureEditor : Editor
         camera = serializedObject.FindProperty(nameof(Cic.targetCamera));
         imageRes = serializedObject.FindProperty(nameof(Cic.imageResolution));
         writeType = serializedObject.FindProperty(nameof(Cic.writeType));
+        imageFormat = serializedObject.FindProperty(nameof(Cic.imageFormat));
 
         //fileName = serializedObject.FindProperty(nameof(Cic.fileName));
     }
@@ -62,14 +64,16 @@ public class CameraImageCaptureEditor : Editor
             }
             EditorGUILayout.Space();
             Cic.fileName = EditorGUILayout.TextField("File name", Cic.fileName);
+            EditorGUILayout.Space();
+            Cic.isImageSerial = EditorGUILayout.Toggle("Image serialized", Cic.isImageSerial);
+            Cic.isOverrideFile = EditorGUILayout.Toggle("Override file", Cic.isOverrideFile);
+            EditorGUILayout.PropertyField(writeType);
+            EditorGUILayout.PropertyField(imageFormat);
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
 
         EditorGUILayout.Space();
 
-        Cic.isImageSerial = EditorGUILayout.Toggle("Image serialized", Cic.isImageSerial);
-        EditorGUILayout.PropertyField(writeType);
-        Cic.isOverrideFile = EditorGUILayout.Toggle("Override file", Cic.isOverrideFile);
         EditorGUILayout.PropertyField(imageRes);
 
         if (GUILayout.Button("Capture and save"))
