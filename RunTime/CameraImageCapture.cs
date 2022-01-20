@@ -74,11 +74,7 @@ namespace CIC.Core
             if (!FolderPathCheck(folderPath)) return;
             fileName = UpdateFileName(fileName);
             if (!FileNameCheck(fileName)) return;
-<<<<<<< HEAD
-            byte[] saveData = texture.EncodeToPNG();
-            Destroy(texture);
 
-=======
             byte[] saveData = null;
             switch (imageFormat)
             {
@@ -95,7 +91,8 @@ namespace CIC.Core
                     saveData = texture.EncodeToTGA();
                     break;
             }
->>>>>>> 3e65a7e4391df44e39ed31c41fbe0233ee66d7db
+            Destroy(texture);
+
 
             if (!Directory.Exists(folderPath))
             {
