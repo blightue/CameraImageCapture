@@ -74,6 +74,7 @@ namespace CIC.Core
             if (!FolderPathCheck(folderPath)) return;
             fileName = UpdateFileName(fileName);
             if (!FileNameCheck(fileName)) return;
+
             byte[] saveData = null;
             switch (imageFormat)
             {
@@ -91,6 +92,7 @@ namespace CIC.Core
                     break;
             }
             Destroy(texture);
+
 
             if (!Directory.Exists(folderPath))
             {
