@@ -90,6 +90,7 @@ namespace CIC.Core
                     saveData = texture.EncodeToTGA();
                     break;
             }
+            Destroy(texture);
 
             if (!Directory.Exists(folderPath))
             {
