@@ -69,6 +69,8 @@ namespace CIC.Core
             fileName = UpdateFileName(fileName);
             if (!FileNameCheck(fileName)) return;
             byte[] saveData = texture.EncodeToPNG();
+            Destroy(texture);
+
 
             if (!Directory.Exists(folderPath))
             {
