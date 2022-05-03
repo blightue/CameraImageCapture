@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.0]-2022-05-03
 
+### Add
+
+- Add logging capture history to local support for generating correct image serials
 
 ## [0.1.2]-2022-01-15
 
