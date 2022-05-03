@@ -13,8 +13,8 @@ public class CameraImageCaptureEditor : Editor
     private SerializedProperty writeType;
     private SerializedProperty imageFormat;
 
-    private bool showFileSetting;
-    private bool showComponents;
+    private bool showFileSetting = true;
+    private bool showComponents = true;
 
     private string foldPathPanel;
 
@@ -30,7 +30,7 @@ public class CameraImageCaptureEditor : Editor
 
     private void OnEnable()
     {
-        Cic.InitDic();
+        Cic.fileInfors = CaptureInforManager.ReadLocalData();
         camera = serializedObject.FindProperty(nameof(Cic.targetCamera));
         imageRes = serializedObject.FindProperty(nameof(Cic.imageResolution));
         writeType = serializedObject.FindProperty(nameof(Cic.writeType));
@@ -38,6 +38,12 @@ public class CameraImageCaptureEditor : Editor
 
         //fileName = serializedObject.FindProperty(nameof(Cic.fileName));
     }
+
+    private void OnDestroy()
+    {
+        CaptureInforManager.WriteLocalData(Cic.fileInfors);
+    }
+
 
     public override void OnInspectorGUI()
     {
@@ -53,13 +59,13 @@ public class CameraImageCaptureEditor : Editor
         showFileSetting = EditorGUILayout.BeginFoldoutHeaderGroup(showFileSetting, "Export setting");
         if (showFileSetting)
         {
-            EditorGUILayout.LabelField("Save folder path");
+            EditorGUILayout.LabelField("Export folder");
             if (Cic.saveFolderPath == null || Cic.saveFolderPath.Length == 0) Cic.saveFolderPath = Application.persistentDataPath;
             EditorStyles.textArea.wordWrap = true;
             Cic.saveFolderPath = EditorGUILayout.TextArea(Cic.saveFolderPath, GUILayout.Height(40));
             if (GUILayout.Button("Change folder"))
             {
-                foldPathPanel = EditorUtility.OpenFolderPanel("Select save path", Cic.saveFolderPath, "");
+                foldPathPanel = EditorUtility.OpenFolderPanel("Select export path", Cic.saveFolderPath, "");
                 if (foldPathPanel != "") Cic.saveFolderPath = foldPathPanel;
             }
             EditorGUILayout.Space();

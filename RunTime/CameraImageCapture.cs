@@ -1,13 +1,12 @@
+using CIC.Data;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using CIC.Data;
-
 
 namespace CIC.Core
 {
-
-    public enum ImageFormat { jpg, png, tga };
+    public enum ImageFormat
+    { jpg, png, tga };
 
     [AddComponentMenu("Camera Image Capture/CameraImageCapture")]
     public class CameraImageCapture : MonoBehaviour
@@ -23,7 +22,7 @@ namespace CIC.Core
 
         public string fileName;
 
-        private Dictionary<string, FileInfors> fileInfors = new Dictionary<string, FileInfors>();
+        public Dictionary<string, FileInfor> fileInfors = new Dictionary<string, FileInfor>();
 
         public void Reset()
         {
@@ -32,14 +31,23 @@ namespace CIC.Core
             imageFormat = ImageFormat.png;
             isOverrideFile = false;
             isImageSerial = true;
-            fileInfors = new Dictionary<string, FileInfors>();
+            fileInfors = CaptureInforManager.ReadLocalData();
             fileName = "cameraCaptures";
             Debug.Log("Reset CIC");
         }
 
-        public void InitDic()
+        private void OnDisable()
         {
-            fileInfors = new Dictionary<string, FileInfors>();
+#if !UNITY_EDITOR
+            CaptureInforManager.WriteLocalData(fileInfors);
+#endif
+        }
+
+        private void OnEnable()
+        {
+#if !UNITY_EDITOR
+            fileInfors = CaptureInforManager.ReadLocalData();
+#endif
         }
 
         public void CaptureAndSaveImage()
@@ -84,15 +92,16 @@ namespace CIC.Core
                 case ImageFormat.jpg:
                     saveData = texture.EncodeToJPG();
                     break;
+
                 case ImageFormat.png:
                     saveData = texture.EncodeToPNG();
                     break;
+
                 case ImageFormat.tga:
                     saveData = texture.EncodeToTGA();
                     break;
             }
             DestroyImmediate(texture);
-
 
             if (!Directory.Exists(folderPath))
             {
@@ -111,12 +120,13 @@ namespace CIC.Core
                 case WriteFileType.MainThread:
                     DataSaver.WriteDataMain(fullpath, saveData);
                     break;
+
                 case WriteFileType.Async:
                     DataSaver.WriteDataTask(fullpath, saveData);
                     break;
-                //case WriteFileType.JobSystem:
-                //    DataSaver.WriteDataJobS(fullpath, saveData);
-                //    break;
+                    //case WriteFileType.JobSystem:
+                    //    DataSaver.WriteDataJobS(fullpath, saveData);
+                    //    break;
             }
 
             Debug.Log("Capture image save to " + fullpath);
@@ -128,7 +138,7 @@ namespace CIC.Core
             {
                 if (isOverrideFile)
                 {
-                    fileInfors[name] = new FileInfors(saveFolderPath, 0);
+                    fileInfors[name] = new FileInfor(saveFolderPath, 0);
                     return name;
                 }
                 while
@@ -139,7 +149,7 @@ namespace CIC.Core
                 {
                     name += "-New";
                 }
-                fileInfors[name] = new FileInfors(saveFolderPath, 0);
+                fileInfors[name] = new FileInfor(saveFolderPath, 0);
                 //Debug.Log(fileInfors[name].fileCount + fileInfors.ContainsKey(name).ToString());
             }
             fileName = name;
@@ -170,6 +180,7 @@ namespace CIC.Core
             }
             return true;
         }
+
         private bool FileNameCheck(string fileName)
         {
             if (fileName == "" || fileName == null)
@@ -192,19 +203,5 @@ namespace CIC.Core
                 PlayerPrefs.Save();
             }
         }
-
-
-        private class FileInfors
-        {
-            public string folderPath;
-            public int fileCount;
-
-            public FileInfors(string folderPath, int fileCount)
-            {
-                this.folderPath = folderPath;
-                this.fileCount = fileCount;
-            }
-        }
     }
-
 }
