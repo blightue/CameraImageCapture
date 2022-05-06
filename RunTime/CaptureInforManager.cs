@@ -19,7 +19,8 @@ public static class CaptureInforManager
             fileNameQueue.Enqueue(item.Key);
             fileInforQueue.Enqueue(item.Value);
         }
-
+        
+        if (!Directory.Exists(foldPath)) Directory.CreateDirectory(foldPath);
         if (!File.Exists(inforPath)) File.Create(inforPath);
         CaptureInfor captureInfor = new CaptureInfor();
 
