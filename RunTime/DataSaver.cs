@@ -2,7 +2,7 @@ using System.IO;
 //using Unity.Jobs;
 //using Unity.Collections;
 
-namespace CIC.Data
+namespace SuiSuiShou.CIC.Data
 {
 
     public static class DataSaver

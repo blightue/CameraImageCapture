@@ -4,7 +4,6 @@ using System.IO;
 
 public static class CaptureInforManager
 {
-
     private static string foldPath = Path.Combine(Application.persistentDataPath, "CameraCapture");
     private static string inforPath = Path.Combine(foldPath, "CameraCaptureInfor.json");
 

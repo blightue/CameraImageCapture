@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+
+
+## [0.3.0]-2022-06-17
+
+### Changed
+
+- Package scripts namespace changed (CIC -> SuiSuiShou.CIC)
+- Component editor redraw
+
+### Added
+
+- Added a script  icon to CIC Component
+
 ## [0.2.0]-2022-05-03
 
 ### Add
