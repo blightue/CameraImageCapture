@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-
+- [ ] Check logged image-file serials list is correct before reading logged Json file
 
 ## [0.3.0]-2022-06-17
 
