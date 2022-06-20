@@ -18,6 +18,8 @@ public abstract class CameraImageCaptureBaseEditor : Editor
 
     protected string foldPathPanel;
 
+    protected bool isOverrideCameraReso = true;
+
     public CameraImageCapture CIC
     {
         get
@@ -104,10 +106,16 @@ public abstract class CameraImageCaptureBaseEditor : Editor
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
     }
-
+    
     protected virtual void InspectorOthers()
     {
+        //EditorGUILayout.LabelField("Image resolution");
+        isOverrideCameraReso = EditorGUILayout.Toggle("Is Override Camera Resolution", isOverrideCameraReso);
+        if (!isOverrideCameraReso)
+            CIC.ImageResolution = new Vector2Int(CIC.targetCamera.pixelWidth, CIC.targetCamera.pixelHeight);
+        GUI.enabled = isOverrideCameraReso;
         CIC.ImageResolution = EditorGUILayout.Vector2IntField("Image resolution", CIC.ImageResolution);
+        GUI.enabled = true;
 
         EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
     }

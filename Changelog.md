@@ -7,6 +7,15 @@ All notable changes to this project will be documented in this file.
 
 - [ ] Check logged image-file serials list is correct before reading logged Json file
 
+
+
+## [0.3.1]-2022-06-20
+
+### Added
+
+- Demo gif in README
+- Component editor add `Is Override Camera Resolution` option
+
 ## [0.3.0]-2022-06-17
 
 ### Changed
