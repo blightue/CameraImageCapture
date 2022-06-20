@@ -41,11 +41,17 @@ Capture camera image and save to a specified path.
    - **Image format** : PNG JPG TGA
    - **Is Override Camera Resolution** : False to set your own image resolution. Image will follow target camera **FOV Axis**
 
+3. Click **Capture and save** button for capturing
+
 ### Runtime
 
 1. Assign the `CameraImageCapture` component  in your code
-2. Call `CameraImageCapture.CaptureAndSaveImage()` .
-3. `CameraImageCapture` fields can changed during runtime.
+
+2. Call `CameraImageCapture.CaptureAndSaveImage()` 
+
+3. `CameraImageCapture` fields can changed during runtime
+
+   **Code Sample**
 
 ```c#
 using SuiSuiShou.CIC.Core;
