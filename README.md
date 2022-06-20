@@ -2,7 +2,7 @@
 
 Capture camera image and save to a specified path.
 
-
+![Demo Gif](https://github.com/blightue/UnityCameraImageCapture/blob/main/Resource/Demo.gif)
 
 ## Installation instructions
 
