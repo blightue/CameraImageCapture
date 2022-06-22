@@ -19,7 +19,7 @@ namespace SuiSuiShou.CIC.Core
 
         public abstract string SaveFolderPath { get; set; }
         public abstract string FileName { get; set; }
-
+        public abstract bool IsOverrideCameraResolution { get; set; }
         #endregion
 
         public Dictionary<string, FileInfor> fileInfors = new Dictionary<string, FileInfor>();

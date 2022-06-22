@@ -9,6 +9,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+## [0.3.2]-2022-06-22
+
+### Fixed
+
+- Fixed component field won't save issue
+
 ## [0.3.1]-2022-06-20
 
 ### Added
