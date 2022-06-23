@@ -65,6 +65,7 @@ namespace SuiSuiShou.CIC.Core
             camera.targetTexture = cameraTexture;
             camera.Render();
 
+            if (RenderTexture.active != null) RenderTexture.active.Release();
             RenderTexture.active = cameraTexture;
 
             Debug.Log("Camera rect = " + camera.pixelWidth + " - " + camera.pixelHeight
@@ -73,7 +74,10 @@ namespace SuiSuiShou.CIC.Core
 
             texture2D.ReadPixels(new Rect(0, 0, resolution.x, resolution.y), 0, 0);
 
+            RenderTexture lastTexture = RenderTexture.active;
             RenderTexture.active = null;
+            lastTexture.Release();
+
             camera.targetTexture = null;
 
             return texture2D;

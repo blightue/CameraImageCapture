@@ -7,7 +7,11 @@ All notable changes to this project will be documented in this file.
 
 - [ ] Check logged image-file serials list is correct before reading logged Json file
 
+## [0.3.3]-2022-06-23
 
+### Fixed
+
+- Fixed render texture memory leak issue
 
 ## [0.3.2]-2022-06-22
 
