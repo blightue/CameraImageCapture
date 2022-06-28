@@ -3,26 +3,31 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using SuiSuiShou.CIC.Data;
+using SuiSuiShou.CIC.Infor;
 
 namespace SuiSuiShou.CIC.Core
 {
     public abstract class CameraImageCaptureBase : MonoBehaviour
     {
+        public const char SerialSeparator = '-';
+        
         #region Properties
+
         public abstract Vector2Int ImageResolution { get; set; }
 
         public abstract WriteFileType WriteType { get; set; }
         public abstract ImageFormat ImageFormat { get; set; }
 
         public abstract bool IsOverrideFile { get; set; }
-        public abstract bool IsImageSerial  { get; set; }
+        public abstract bool IsImageSerial { get; set; }
 
         public abstract string SaveFolderPath { get; set; }
         public abstract string FileName { get; set; }
         public abstract bool IsOverrideCameraResolution { get; set; }
+
         #endregion
 
-        public Dictionary<string, FileInfor> fileInfors = new Dictionary<string, FileInfor>();
+        public Dictionary<FileInfor, int> fileInfors = new Dictionary<FileInfor, int>();
         public Camera targetCamera;
 
 
@@ -69,7 +74,7 @@ namespace SuiSuiShou.CIC.Core
             RenderTexture.active = cameraTexture;
 
             Debug.Log("Camera rect = " + camera.pixelWidth + " - " + camera.pixelHeight
-                + "  Screen resolution = " + Screen.width + " - " + Screen.height);
+                      + "  Screen resolution = " + Screen.width + " - " + Screen.height);
             Texture2D texture2D = new Texture2D(resolution.x, resolution.y, TextureFormat.RGBA32, false);
 
             texture2D.ReadPixels(new Rect(0, 0, resolution.x, resolution.y), 0, 0);
@@ -86,7 +91,7 @@ namespace SuiSuiShou.CIC.Core
         public void StartSaveImage(string folderPath, string fileName, Texture2D texture)
         {
             if (!FolderPathCheck(folderPath)) return;
-            fileName = UpdateFileName(fileName);
+            // fileName = UpdateFileName(fileName);
             if (!FileNameCheck(fileName)) return;
 
             byte[] saveData = null;
@@ -107,19 +112,26 @@ namespace SuiSuiShou.CIC.Core
                     saveData = texture.EncodeToTGA();
                     break;
             }
+
             DestroyImmediate(texture);
 
             if (!Directory.Exists(folderPath))
             {
                 Debug.LogWarning(string.Format("Folder path {0} do not exist"));
-                return;
+                Directory.CreateDirectory(folderPath);
             }
+
             string fullpath;
             if (IsImageSerial)
-                fullpath = Path.Combine(folderPath, fileName + "-" + fileInfors[fileName].fileCount + '.' + ImageFormat.ToString());
+            {
+                FileInfor fileInfor = new FileInfor(folderPath, fileName, ImageFormat);
+                if (!fileInfors.ContainsKey(fileInfor)) fileInfors[fileInfor] = 0;
+                fullpath = Path.Combine(folderPath,
+                    fileName + SerialSeparator + fileInfors[fileInfor].ToString() + '.' + ImageFormat.ToString());
+                fileInfors[fileInfor] = fileInfors[fileInfor] + 1;
+            }
             else
                 fullpath = Path.Combine(folderPath, fileName + '.' + ImageFormat.ToString());
-            fileInfors[fileName].fileCount++;
 
             switch (WriteType)
             {
@@ -130,37 +142,37 @@ namespace SuiSuiShou.CIC.Core
                 case WriteFileType.Async:
                     DataSaver.WriteDataTask(fullpath, saveData);
                     break;
-                    //case WriteFileType.JobSystem:
-                    //    DataSaver.WriteDataJobS(fullpath, saveData);
-                    //    break;
+                //case WriteFileType.JobSystem:
+                //    DataSaver.WriteDataJobS(fullpath, saveData);
+                //    break;
             }
 
             Debug.Log("Capture image save to " + fullpath);
         }
 
-        private string UpdateFileName(string name)
-        {
-            if (!fileInfors.ContainsKey(name))
-            {
-                if (IsOverrideFile)
-                {
-                    fileInfors[name] = new FileInfor(SaveFolderPath, 0);
-                    return name;
-                }
-                while
-                    (
-                    PlayerPrefs.HasKey("CICFileCount" + name) &&
-                    File.Exists(Path.Combine(SaveFolderPath, name + "-0.png"))
-                    )
-                {
-                    name += "-New";
-                }
-                fileInfors[name] = new FileInfor(SaveFolderPath, 0);
-                //Debug.Log(fileInfors[name].fileCount + fileInfors.ContainsKey(name).ToString());
-            }
-            FileName = name;
-            return name;
-        }
+        // private string UpdateFileName(string name)
+        // {
+        //     if (!fileInfors.ContainsKey(name))
+        //     {
+        //         if (IsOverrideFile)
+        //         {
+        //             fileInfors[name] = new FileInfor(SaveFolderPath, 0);
+        //             return name;
+        //         }
+        //         while
+        //             (
+        //             PlayerPrefs.HasKey("CICFileCount" + name) &&
+        //             File.Exists(Path.Combine(SaveFolderPath, name + "-0.png"))
+        //             )
+        //         {
+        //             name += "-New";
+        //         }
+        //         fileInfors[name] = new FileInfor(SaveFolderPath, 0);
+        //         //Debug.Log(fileInfors[name].fileCount + fileInfors.ContainsKey(name).ToString());
+        //     }
+        //     FileName = name;
+        //     return name;
+        // }
 
         private bool CameraCheck(Camera camera)
         {
@@ -169,6 +181,7 @@ namespace SuiSuiShou.CIC.Core
                 Debug.LogWarning("Camera is null");
                 return false;
             }
+
             return true;
         }
 
@@ -179,11 +192,13 @@ namespace SuiSuiShou.CIC.Core
                 Debug.LogWarning("Savepath is null or empty");
                 return false;
             }
+
             if (!Directory.Exists(path))
             {
                 Debug.LogWarning("Savepath do not exist");
                 return false;
             }
+
             return true;
         }
 
@@ -194,20 +209,22 @@ namespace SuiSuiShou.CIC.Core
                 Debug.LogWarning("fileName is null or empty");
                 return false;
             }
+
             return true;
         }
 
-        private void OnApplicationQuit()
-        {
-            if (fileInfors.Count > 0)
-            {
-                foreach (var item in fileInfors)
-                {
-                    PlayerPrefs.SetInt("CICFileCount" + item.Key, item.Value.fileCount);
-                    PlayerPrefs.SetString("CICFileFolder" + item.Key, item.Value.folderPath);
-                }
-                PlayerPrefs.Save();
-            }
-        }
+        // private void OnApplicationQuit()
+        // {
+        //     if (fileInfors.Count > 0)
+        //     {
+        //         foreach (var item in fileInfors)
+        //         {
+        //             PlayerPrefs.SetInt("CICFileCount" + item.Key, item.Value.fileCount);
+        //             PlayerPrefs.SetString("CICFileFolder" + item.Key, item.Value.folderPath);
+        //         }
+        //
+        //         PlayerPrefs.Save();
+        //     }
+        // }
     }
 }

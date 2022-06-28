@@ -3,9 +3,15 @@ All notable changes to this project will be documented in this file.
 
 
 
-## [Unreleased]
+## [0.3.4]-2022-06-28
 
-- [ ] Check logged image-file serials list is correct before reading logged Json file
+### Update
+
+- Reconstruct capture information
+
+### Added
+
+- Check logged image-file serials is correct after read capture information file
 
 ## [0.3.3]-2022-06-23
 

@@ -1,100 +1,196 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Linq;
+using SuiSuiShou.CIC.Core;
 
-public static class CaptureInforManager
+namespace SuiSuiShou.CIC.Infor
 {
-    private static string foldPath = Path.Combine(Application.persistentDataPath, "CameraCapture");
-    private static string inforPath = Path.Combine(foldPath, "CameraCaptureInfor.json");
-
-    //public static CaptureInfor captureInfor;
-
-    public static async void WriteLocalData(Dictionary<string, FileInfor> fileInfors)
+    public static class CaptureInforManager
     {
-        Queue<string> fileNameQueue = new Queue<string>();
-        Queue<FileInfor> fileInforQueue = new Queue<FileInfor>();
-        foreach (var item in fileInfors)
+        private static string foldPath = Path.Combine(Application.persistentDataPath, "CameraCapture");
+        private static string inforPath = Path.Combine(foldPath, "CameraCaptureInfor.json");
+
+        public static void WriteLocalData(Dictionary<FileInfor, int> fileInfors)
         {
-            fileNameQueue.Enqueue(item.Key);
-            fileInforQueue.Enqueue(item.Value);
+            Queue<FileInfor> fileInforQueue = new Queue<FileInfor>();
+            Queue<int> fileCountQueue = new Queue<int>();
+            foreach (var item in fileInfors)
+            {
+                fileInforQueue.Enqueue(item.Key);
+                fileCountQueue.Enqueue(item.Value);
+            }
+
+            if (!Directory.Exists(foldPath)) Directory.CreateDirectory(foldPath);
+            if (!File.Exists(inforPath)) File.Create(inforPath);
+            CaptureInfor captureInfor = new CaptureInfor();
+
+            captureInfor.fileInfors = fileInforQueue.ToArray();
+            captureInfor.fileCount = fileCountQueue.ToArray();
+
+            string jsonForWrite = JsonUtility.ToJson(captureInfor, true);
+
+            using (StreamWriter streamWrite = new StreamWriter(inforPath))
+            {
+                streamWrite.Write(jsonForWrite);
+            }
+
+            // Debug.Log($"Write Capture infor at {inforPath}");
+        }
+
+        public static Dictionary<FileInfor, int> ReadLocalData()
+        {
+            //Debug.Log($"Start read Capture infor at {inforPath}");
+
+
+            Dictionary<FileInfor, int> fileInforDic = new Dictionary<FileInfor, int>();
+
+            if (!File.Exists(inforPath)) return fileInforDic;
+
+            string inforJson;
+
+            using (StreamReader streamReader = new StreamReader(inforPath))
+            {
+                inforJson = streamReader.ReadToEnd();
+            }
+
+            CaptureInfor captureInfor = JsonUtility.FromJson<CaptureInfor>(inforJson);
+
+            if (captureInfor == null ||
+                captureInfor.fileCount == null ||
+                captureInfor.fileInfors == null ||
+                captureInfor.fileCount.Length == 0 ||
+                captureInfor.fileInfors.Length == 0
+               )
+            {
+                Debug.Log("CaptureInfor is empty");
+                return fileInforDic;
+            }
+
+            for (int i = 0; i < captureInfor.fileInfors.Length; i++)
+            {
+                int checkedFileCount = 0;
+                if (!CheckIsDiskFileCountUnchanged(captureInfor.fileInfors[i], captureInfor.fileCount[i],
+                        out checkedFileCount))
+                    captureInfor.fileCount[i] = checkedFileCount;
+            }
+
+
+            for (int i = 0; i < captureInfor.fileInfors.Length; i++)
+            {
+                fileInforDic[captureInfor.fileInfors[i]] = captureInfor.fileCount[i];
+            }
+
+            return fileInforDic;
+        }
+
+        private static bool CheckIsDiskFileCountUnchanged(FileInfor infor, int loggedCount, out int changedCount)
+        {
+            string[] filePath = null;
+
+            filePath = Directory.GetFiles(infor.folderPath, $"{infor.fileName}-*.{infor.imageFormat.ToString()}",
+                SearchOption.TopDirectoryOnly);
+
+            if (filePath.Length == 0)
+            {
+                Debug.Log($"Empty {infor.folderPath} - {infor.fileName}");
+                changedCount = 0;
+                return false;
+            }
+
+            // if (filePath.Length == loggedCount )
+            // {
+            //     changedCount = loggedCount;
+            //     Debug.Log("Unchanged");
+            //     return true;
+            // }
+            int[] indexes = IndexesFromFilePathes(filePath, infor);
+            // Debug.Log(indexes[indexes.Length - 1]);
+            int lastIndex = indexes[indexes.Length - 1];
+
+            string debugText = "";
+
+            foreach (var VARIABLE in filePath)
+            {
+                debugText += VARIABLE + "-" + IndexFromFilePath(VARIABLE, infor) +
+                             System.Environment.NewLine;
+            }
+
+            Debug.Log(debugText + filePath.Length);
+            if (lastIndex == loggedCount - 1)
+            {
+                changedCount = loggedCount;
+                // Debug.Log("Unchanged");
+                return true;
+            }
+            else
+            {
+                changedCount = lastIndex + 1;
+                // Debug.Log("Changed to " + changedCount);
+                return false;
+            }
+        }
+
+        private static int[] IndexesFromFilePathes(string[] filePathes, FileInfor infor)
+        {
+            Queue<int> indexes = new Queue<int>();
+
+            foreach (var path in filePathes)
+            {
+                indexes.Enqueue(IndexFromFilePath(path, infor));
+            }
+
+            int[] indexArray = indexes.ToArray();
+            Array.Sort(indexArray);
+
+            return indexArray;
         }
         
-        if (!Directory.Exists(foldPath)) Directory.CreateDirectory(foldPath);
-        if (!File.Exists(inforPath)) File.Create(inforPath);
-        CaptureInfor captureInfor = new CaptureInfor();
-
-        captureInfor.fileNames = fileNameQueue.ToArray();
-        captureInfor.fileInfors = fileInforQueue.ToArray();
-
-        string jsonForWrite = JsonUtility.ToJson(captureInfor);
-
-        using (StreamWriter streamWrite = new StreamWriter(inforPath))
+        private static int IndexFromFilePath(string filePath, FileInfor infor)
         {
-            await streamWrite.WriteAsync(jsonForWrite);
-        }
+            string[] fileParts = filePath.Split(CameraImageCaptureBase.SerialSeparator);
 
-        //Debug.Log($"Write Capture infor at {inforPath}");
+            string fileTail = fileParts[fileParts.Length - 1];
+            //Debug.Log(fileTail);
+            string indexString = fileTail.Substring(0, fileTail.Length - infor.imageFormat.ToString().Length - 1);
+            int index = -1;
+            int.TryParse(indexString, out index);
+            return index;
+        }
     }
-    public static Dictionary<string, FileInfor> ReadLocalData()
+
+
+    [System.Serializable]
+    public class CaptureInfor
     {
-        //Debug.Log($"Start read Capture infor at {inforPath}");
+        public FileInfor[] fileInfors;
+        public int[] fileCount;
 
 
-        Dictionary<string, FileInfor> fileInforDic = new Dictionary<string, FileInfor>();
-
-        if (!File.Exists(inforPath)) return new Dictionary<string, FileInfor>();
-
-        string inforJson;
-
-        using (StreamReader streamReader = new StreamReader(inforPath))
+        public CaptureInfor(FileInfor[] fileInfors, int[] fileCount)
         {
-            inforJson = streamReader.ReadToEnd();
+            this.fileInfors = fileInfors;
+            this.fileCount = fileCount;
         }
 
-        CaptureInfor captureInfor = JsonUtility.FromJson<CaptureInfor>(inforJson);
-
-        if (captureInfor == null ||
-            captureInfor.fileNames == null ||
-            captureInfor.fileInfors == null ||
-            captureInfor.fileNames.Length == 0 ||
-            captureInfor.fileInfors.Length == 0
-            )
+        public CaptureInfor()
         {
-            Debug.Log("CaptureInfor is empty");
-            return new Dictionary<string, FileInfor>();
         }
-
-        for (int i = 0; i < captureInfor.fileNames.Length; i++)
-        {
-            fileInforDic[captureInfor.fileNames[i]] = captureInfor.fileInfors[i];
-        }
-        return fileInforDic;
     }
-}
 
-
-[System.Serializable]
-public class CaptureInfor
-{
-    public string[] fileNames;
-    public FileInfor[] fileInfors;
-
-    public CaptureInfor()
+    [System.Serializable]
+    public struct FileInfor
     {
-        this.fileNames = new string[0];
-        this.fileInfors = new FileInfor[0];
-    }
-}
+        public string folderPath;
+        public string fileName;
+        public ImageFormat imageFormat;
 
-[System.Serializable]
-public class FileInfor
-{
-    public string folderPath;
-    public int fileCount;
-
-    public FileInfor(string folderPath, int fileCount)
-    {
-        this.folderPath = folderPath;
-        this.fileCount = fileCount;
+        public FileInfor(string folderPath, string fileName, ImageFormat imageFormat)
+        {
+            this.folderPath = folderPath;
+            this.fileName = fileName;
+            this.imageFormat = imageFormat;
+        }
     }
 }
