@@ -76,7 +76,7 @@ public class CameraImageCaptureEditor : CameraImageCaptureBaseEditor
         showFileSetting = EditorGUILayout.BeginFoldoutHeaderGroup(showFileSetting, "Export setting");
         if (showFileSetting)
         {
-            CIC.fileName = EditorGUILayout.TextField("File name", CIC.fileName);
+            CIC.FileName = EditorGUILayout.TextField("File name", CIC.FileName);
 
             GUILayout.BeginVertical("box");
             GUILayout.BeginHorizontal();
@@ -97,7 +97,8 @@ public class CameraImageCaptureEditor : CameraImageCaptureBaseEditor
 
             GUILayout.BeginVertical("box");
             CIC.IsImageSerial = EditorGUILayout.Toggle("Image serialized", CIC.IsImageSerial);
-            CIC.IsOverrideFile = EditorGUILayout.Toggle("Override file", CIC.IsOverrideFile);
+            CIC.IsLogCap = EditorGUILayout.Toggle("Log Capture", CIC.IsLogCap);
+            // CIC.IsOverrideFile = EditorGUILayout.Toggle("Override file", CIC.IsOverrideFile);
             CIC.WriteType = (WriteFileType) EditorGUILayout.EnumPopup("Write type", CIC.WriteType);
             CIC.ImageFormat = (ImageFormat) EditorGUILayout.EnumPopup("Image format", CIC.ImageFormat);
             GUILayout.EndVertical();

@@ -117,7 +117,7 @@ namespace SuiSuiShou.CIC.Infor
                              System.Environment.NewLine;
             }
 
-            Debug.Log(debugText + filePath.Length);
+            //Debug.Log(debugText + filePath.Length);
             if (lastIndex == loggedCount - 1)
             {
                 changedCount = loggedCount;

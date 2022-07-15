@@ -18,7 +18,8 @@ namespace SuiSuiShou.CIC.Core
         public abstract WriteFileType WriteType { get; set; }
         public abstract ImageFormat ImageFormat { get; set; }
 
-        public abstract bool IsOverrideFile { get; set; }
+        // public abstract bool IsOverrideFile { get; set; }
+        public abstract bool IsLogCap { get; set; }
         public abstract bool IsImageSerial { get; set; }
 
         public abstract string SaveFolderPath { get; set; }
@@ -36,7 +37,7 @@ namespace SuiSuiShou.CIC.Core
             targetCamera = Camera.main;
             SaveFolderPath = Application.persistentDataPath;
             ImageFormat = ImageFormat.png;
-            IsOverrideFile = false;
+            // IsOverrideFile = false;
             IsImageSerial = true;
             fileInfors = CaptureInforManager.ReadLocalData();
             FileName = "cameraCaptures";
@@ -73,7 +74,7 @@ namespace SuiSuiShou.CIC.Core
             if (RenderTexture.active != null) RenderTexture.active.Release();
             RenderTexture.active = cameraTexture;
 
-            Debug.Log("Camera rect = " + camera.pixelWidth + " - " + camera.pixelHeight
+            if(IsLogCap) Debug.Log("Camera rect = " + camera.pixelWidth + " - " + camera.pixelHeight
                       + "  Screen resolution = " + Screen.width + " - " + Screen.height);
             Texture2D texture2D = new Texture2D(resolution.x, resolution.y, TextureFormat.RGBA32, false);
 
@@ -147,7 +148,7 @@ namespace SuiSuiShou.CIC.Core
                 //    break;
             }
 
-            Debug.Log("Capture image save to " + fullpath);
+            if(IsLogCap) Debug.Log("Capture image save to " + fullpath);
         }
 
         // private string UpdateFileName(string name)

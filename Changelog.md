@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 
 
+## [Unreleased]
+
+- [ ] `DataReader` Implement
+
+
+
+## [0.3.5]-2022-07-15
+
+### Remove
+
+- Remove property `IsOverrideFile` in CIC component
+
+### Add
+
+- Add property `IsLogCapture` in CIC component
+
 ## [0.3.4]-2022-06-28
 
 ### Update
