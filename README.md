@@ -1,5 +1,7 @@
 # Unity Camera Image Capture
 
+[version:0.3.5 2022-07-16]
+
 Capture camera image and save to a specified path.
 
 ![Demo Gif](https://github.com/blightue/UnityCameraImageCapture/blob/main/Resource/Demo.gif)
@@ -25,18 +27,18 @@ Capture camera image and save to a specified path.
 
 ### Editor
 
-1. Add component `CameraImageCapture` to a GameObject via `Camera Image Capture/CameraImageCapture`
+1. Add component `CameraImageCapture` to a `GameObject` via `Camera Image Capture/CameraImageCapture`
 
 2. Config `CameraImageCapture` value in the Inspector.
 
    - **Target Camera** : Target camera for capture
    - **File Name** : The name of captured image file
    - **Export folder** : The folder for the captured image file.
-   - **Image serialized** : Is the image file name serialized. If set to true, the file name will be [fileName]-0.jpg [fileName]-1.jpg ...
-   - **Override file** : Is override file when the file name is the same
+   - **Image serialized** : Is the image file name serialized. If set to true, the file name will be **[fileName]-0.jpg** **[fileName]-1.jpg** ...
+   - **Is Log Capture** : Is log capture information when image captured
    - **Write type** :
      - Main Thread: Write the file in main thread. It will block the main thread
-     - Async: Write the file asynchronous. **Caution use this type in Update function**
+     - Async: Write the file asynchronous. **Caution use this type in MonoBehavior.Update() function**
 
    - **Image format** : PNG JPG TGA
    - **Is Override Camera Resolution** : False to set your own image resolution. Image will follow target camera **FOV Axis**
@@ -63,7 +65,7 @@ public class SampleScript : MonoBehaviour
 
     private void Start()
     {
-        cic.fileName = "Sample";
+        cic.FileName = "Sample";
         cic.ImageResolution = new Vector2Int(1920, 1080);
         cic.CaptureAndSaveImage();
     }
