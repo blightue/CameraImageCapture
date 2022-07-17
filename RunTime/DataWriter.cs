@@ -1,21 +1,21 @@
-﻿using System;
 using System.IO;
+//using Unity.Jobs;
+//using Unity.Collections;
 
 namespace SuiSuiShou.CIC.Data
 {
-    [Obsolete("DataSaver is obsolete, use DataWriter instead")]
-    public static class DataSaver
+
+    public static class DataWriter
     {
         public static void WriteDataMain(string fullPath, byte[] data)
         {
             File.WriteAllBytes(fullPath, data);
         }
-
         public static void WriteDataMain(string fullPath, string data)
         {
             File.WriteAllText(fullPath, data);
         }
-
+        
         /*Job System
         public static void WriteDataJobS(string fullPath, byte[] data)
         {
@@ -26,85 +26,84 @@ namespace SuiSuiShou.CIC.Data
             WriteTextJob job = new WriteTextJob(fullPath, data);
         }
         */
-
+        
         public static void WriteDataTask(string fullPath, byte[] data)
         {
             WriteAsyncJob job = new WriteAsyncJob(fullPath, data);
         }
-
         public static void WriteDataTask(string fullPath, string data)
         {
             WriteAsyncJob job = new WriteAsyncJob(fullPath, data);
         }
+
+
     }
 
 
-    // public class WriteInMainJob
-    // {
-    //     public string fullPath;
-    //     public byte[] byteData;
-    //     public string textData;
-    //
-    //     public WriteInMainJob(string fullPath, byte[] data)
-    //     {
-    //         this.fullPath = fullPath;
-    //         this.byteData = data;
-    //     }
-    //
-    //     public WriteInMainJob(string fullPath, string textData)
-    //     {
-    //         this.fullPath = fullPath;
-    //         this.textData = textData;
-    //     }
-    //
-    //     public void ExcuteBytes()
-    //     {
-    //         File.WriteAllBytes(fullPath, byteData);
-    //     }
-    //
-    //     public void ExcuteText()
-    //     {
-    //         File.WriteAllText(fullPath, textData);
-    //     }
-    // }
-    //
-    // public class WriteAsyncJob
-    // {
-    //     public string fullPath;
-    //     public byte[] byteData;
-    //     public string textData;
-    //
-    //     public WriteAsyncJob(string fullPath, byte[] byteData)
-    //     {
-    //         this.fullPath = fullPath;
-    //         this.byteData = byteData;
-    //         ExcuteBytes();
-    //     }
-    //
-    //     public WriteAsyncJob(string fullPath, string textData)
-    //     {
-    //         this.fullPath = fullPath;
-    //         this.textData = textData;
-    //         ExcuteText();
-    //     }
-    //
-    //     private async void ExcuteBytes()
-    //     {
-    //         using (FileStream file = File.Open(fullPath, FileMode.OpenOrCreate))
-    //         {
-    //             file.Seek(0, SeekOrigin.End);
-    //             await file.WriteAsync(byteData, 0, byteData.Length);
-    //         }
-    //     }
-    //
-    //     private async void ExcuteText()
-    //     {
-    //         using (StreamWriter file = File.CreateText(fullPath))
-    //         {
-    //             await file.WriteAsync(textData);
-    //         }
-    //     }
-    // }
+    public class WriteInMainJob
+    {
+        public string fullPath;
+        public byte[] byteData;
+        public string textData;
+
+        public WriteInMainJob(string fullPath, byte[] data)
+        {
+            this.fullPath = fullPath;
+            this.byteData = data;
+        }
+
+        public WriteInMainJob(string fullPath, string textData)
+        {
+            this.fullPath = fullPath;
+            this.textData = textData;
+        }
+
+        public void ExcuteBytes()
+        {
+            File.WriteAllBytes(fullPath, byteData);
+        }
+        public void ExcuteText()
+        {
+            File.WriteAllText(fullPath, textData);
+        }
+    }
+
+    public class WriteAsyncJob
+    {
+        public string fullPath;
+        public byte[] byteData;
+        public string textData;
+
+        public WriteAsyncJob(string fullPath, byte[] byteData)
+        {
+            this.fullPath = fullPath;
+            this.byteData = byteData;
+            ExcuteBytes();
+        }
+
+        public WriteAsyncJob(string fullPath, string textData)
+        {
+            this.fullPath = fullPath;
+            this.textData = textData;
+            ExcuteText();
+        }
+
+        private async void ExcuteBytes()
+        {
+            using (FileStream file = File.Open(fullPath, FileMode.OpenOrCreate))
+            {
+                file.Seek(0, SeekOrigin.End);
+                await file.WriteAsync(byteData, 0, byteData.Length);
+            }
+        }
+        private async void ExcuteText()
+        {
+            using (StreamWriter file = File.CreateText(fullPath))
+            {
+                await file.WriteAsync(textData);
+            }
+        }
+    }
 
 
     /* Job system
@@ -184,11 +183,10 @@ namespace SuiSuiShou.CIC.Data
     }
     */
 
-    // public enum WriteFileType
-    // {
-    //     MainThread,
-    //
-    //     Async
-    //     //, JobSystem
-    // };
+    public enum WriteFileType
+    {
+        MainThread,
+        Async
+            //, JobSystem
+    };
 }

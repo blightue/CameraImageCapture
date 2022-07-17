@@ -3,11 +3,15 @@ All notable changes to this project will be documented in this file.
 
 
 
-## [Unreleased]
+## [0.4.0]
 
-- [ ] `DataReader` Implement
+### Added
 
+- `DataReader` Implement
 
+### Update
+
+- `DataSaver` is now obsolete, use `DataWrite` instead
 
 ## [0.3.5]-2022-07-15
 

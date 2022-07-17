@@ -137,11 +137,11 @@ namespace SuiSuiShou.CIC.Core
             switch (WriteType)
             {
                 case WriteFileType.MainThread:
-                    DataSaver.WriteDataMain(fullpath, saveData);
+                    DataWriter.WriteDataMain(fullpath, saveData);
                     break;
 
                 case WriteFileType.Async:
-                    DataSaver.WriteDataTask(fullpath, saveData);
+                    DataWriter.WriteDataTask(fullpath, saveData);
                     break;
                 //case WriteFileType.JobSystem:
                 //    DataSaver.WriteDataJobS(fullpath, saveData);
