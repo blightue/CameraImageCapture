@@ -22,7 +22,7 @@ All notable changes to this project will be documented in this file.
 
 ### Update
 
-- `DataSaver` is now obsolete, use `DataWrite` instead
+- `DataSaver` is now obsolete, use `DataWriter` instead
 
 ## [0.3.5]-2022-07-15
 
