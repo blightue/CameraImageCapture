@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using System.Linq;
 using SuiSuiShou.CIC.Core;
 
 namespace SuiSuiShou.CIC.Infor

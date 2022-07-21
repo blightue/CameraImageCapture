@@ -32,15 +32,15 @@ namespace SuiSuiShou.CIC.Core
         public Camera targetCamera;
 
 
-        public void Reset()
+        public virtual void Reset()
         {
             targetCamera = Camera.main;
-            SaveFolderPath = Application.persistentDataPath;
-            ImageFormat = ImageFormat.png;
+            // SaveFolderPath = Application.persistentDataPath;
+            // ImageFormat = ImageFormat.png;
             // IsOverrideFile = false;
-            IsImageSerial = true;
+            // IsImageSerial = true;
+            // FileName = "cameraCaptures";
             fileInfors = CaptureInforManager.ReadLocalData();
-            FileName = "cameraCaptures";
             Debug.Log("Reset CIC");
         }
 

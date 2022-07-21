@@ -1,6 +1,6 @@
 # Unity Camera Image Capture
 
-[version:0.3.5 2022-07-16]
+![version](https://badgen.net/badge/version/0.5.0/orange) ![license](https://badgen.net/github/license/blightue/unitycameraImagecapture)
 
 Capture camera image and save to a specified path.
 
@@ -24,6 +24,14 @@ Capture camera image and save to a specified path.
 5. Select the **package.json** file in the unzipped folder
 
 ## Tutorials
+
+### Version 0.5.0 Update: 
+
+Recommend use component **Capture with config**
+
+![Config Gif](https://github.com/blightue/UnityCameraImageCapture/blob/main/Resource/CaptureConfig.gif)
+
+## Installation instructions
 
 ### Editor
 

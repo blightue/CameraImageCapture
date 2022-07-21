@@ -1,9 +1,20 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.0]-2022-07-21
 
+### Added
 
-## [0.4.0]
+- Add CIC Config component & CIC Config scriptable object
+- Add CIC editor **Open in exporter** button
+- Add CIC config use demo
+
+### Changed
+
+- Change CIC, CIC config, Capture config icon
+- Move cic editor inspector func to cic editor base
+
+## [0.4.0]-2022-07-17
 
 ### Added
 
