@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.1]-2022-07-24
+
+### Fixed
+
+- Fixed image has no alpha channel when using URP with **PostProcessing** enabled issue
+
 ## [0.5.0]-2022-07-21
 
 ### Added

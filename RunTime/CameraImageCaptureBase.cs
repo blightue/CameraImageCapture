@@ -10,7 +10,7 @@ namespace SuiSuiShou.CIC.Core
     public abstract class CameraImageCaptureBase : MonoBehaviour
     {
         public const char SerialSeparator = '-';
-        
+
         #region Properties
 
         public abstract Vector2Int ImageResolution { get; set; }
@@ -58,10 +58,60 @@ namespace SuiSuiShou.CIC.Core
 #endif
         }
 
+
+#if UNITY_ENABLE_URP
+
+        public void CaptureAndSaveImage()
+        {
+            if (CheckIsNeedFixedAlpha())
+            {
+                UnityEngine.Rendering.Universal.UniversalAdditionalCameraData data =
+                    targetCamera.GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>();
+                data.renderPostProcessing = false;
+                Texture2D texWithAlpha = CaptureImage(targetCamera, ImageResolution, 8);
+                data.renderPostProcessing = true;
+                Texture2D texWithoutAlpha = CaptureImage(targetCamera, ImageResolution, 8);
+
+                Color[] colorWithAlpha = texWithAlpha.GetPixels();
+                Color[] colorWithoutAlpha = texWithoutAlpha.GetPixels();
+                for (int i = 0; i < colorWithoutAlpha.Length; i++)
+                {
+                    colorWithoutAlpha[i].a = colorWithAlpha[i].a;
+                }
+
+                texWithoutAlpha.SetPixels(colorWithoutAlpha);
+
+                DestroyImmediate(texWithAlpha);
+
+                StartSaveImage(SaveFolderPath, FileName, texWithoutAlpha);
+            }
+            else
+            {
+                StartSaveImage(SaveFolderPath, FileName, CaptureImage(targetCamera, ImageResolution, 8));
+            }
+        }
+
+        private bool CheckIsNeedFixedAlpha()
+        {
+            if (!UnityEngine.Rendering.GraphicsSettings.defaultRenderPipeline is UnityEngine.Rendering.Universal
+                    .UniversalRenderPipelineAsset)
+                return false;
+
+            UnityEngine.Rendering.Universal.UniversalAdditionalCameraData data =
+                targetCamera.GetComponent<UnityEngine.Rendering.Universal.UniversalAdditionalCameraData>();
+
+            if (data == null) return false;
+
+            if (!data.renderPostProcessing) return false;
+
+            return true;
+        }
+#else
         public void CaptureAndSaveImage()
         {
             StartSaveImage(SaveFolderPath, FileName, CaptureImage(targetCamera, ImageResolution, 8));
         }
+#endif
 
         public Texture2D CaptureImage(Camera camera, Vector2Int resolution, int depth)
         {
@@ -74,8 +124,9 @@ namespace SuiSuiShou.CIC.Core
             if (RenderTexture.active != null) RenderTexture.active.Release();
             RenderTexture.active = cameraTexture;
 
-            if(IsLogCap) Debug.Log("Camera rect = " + camera.pixelWidth + " - " + camera.pixelHeight
-                      + "  Screen resolution = " + Screen.width + " - " + Screen.height);
+            if (IsLogCap)
+                Debug.Log("Camera rect = " + camera.pixelWidth + " - " + camera.pixelHeight
+                          + "  Screen resolution = " + Screen.width + " - " + Screen.height);
             Texture2D texture2D = new Texture2D(resolution.x, resolution.y, TextureFormat.RGBA32, false);
 
             texture2D.ReadPixels(new Rect(0, 0, resolution.x, resolution.y), 0, 0);
@@ -148,7 +199,7 @@ namespace SuiSuiShou.CIC.Core
                 //    break;
             }
 
-            if(IsLogCap) Debug.Log("Capture image save to " + fullpath);
+            if (IsLogCap) Debug.Log("Capture image save to " + fullpath);
         }
 
         // private string UpdateFileName(string name)

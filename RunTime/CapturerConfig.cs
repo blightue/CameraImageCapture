@@ -5,7 +5,7 @@ using SuiSuiShou.CIC.Data;
 
 namespace SuiSuiShou.CIC.Core
 {
-    [CreateAssetMenu(menuName = "Camera Capture/Capturer config")]
+    [CreateAssetMenu(menuName = "Camera Image Capture/Capturer config")]
     public class CapturerConfig : ScriptableObject
     {
         public Vector2Int imageResolution = new Vector2Int(512, 512);
