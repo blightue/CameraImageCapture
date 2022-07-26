@@ -7,7 +7,7 @@ using SuiSuiShou.CIC.Infor;
 [CanEditMultipleObjects]
 public abstract class CameraImageCaptureBaseEditor : Editor
 {
-    protected CameraImageCaptureBase cic;
+    protected CameraImageCaptureCore cic;
 
     protected bool showFileSetting = true;
     protected bool showComponents = true;
@@ -16,20 +16,20 @@ public abstract class CameraImageCaptureBaseEditor : Editor
 
     protected virtual void OnEnable()
     {
-        CIC.fileInfors = CaptureInforManager.ReadLocalData();
+        CIC.FileInfors = CaptureInforManager.ReadLocalData();
     }
 
     protected virtual void OnDestroy()
     {
-        CaptureInforManager.WriteLocalData(CIC.fileInfors);
+        CaptureInforManager.WriteLocalData(CIC.FileInfors);
     }
 
-    public CameraImageCaptureBase CIC
+    public CameraImageCaptureCore CIC
     {
         get
         {
             if (cic == null)
-                cic = (CameraImageCaptureBase) target;
+                cic = (CameraImageCaptureCore) target;
             return cic;
         }
     }
@@ -39,8 +39,8 @@ public abstract class CameraImageCaptureBaseEditor : Editor
         showComponents = EditorGUILayout.BeginFoldoutHeaderGroup(showComponents, "Components");
         if (showComponents)
         {
-            CIC.targetCamera =
-                (Camera) EditorGUILayout.ObjectField("Target Camera", CIC.targetCamera, typeof(Camera), true);
+            CIC.TargetCamera =
+                (Camera) EditorGUILayout.ObjectField("Target Camera", CIC.TargetCamera, typeof(Camera), true);
 
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
         }
@@ -91,7 +91,7 @@ public abstract class CameraImageCaptureBaseEditor : Editor
         CIC.IsOverrideCameraResolution =
             EditorGUILayout.Toggle("Is Override Camera Resolution", CIC.IsOverrideCameraResolution);
         if (!CIC.IsOverrideCameraResolution)
-            CIC.ImageResolution = new Vector2Int(CIC.targetCamera.pixelWidth, CIC.targetCamera.pixelHeight);
+            CIC.ImageResolution = new Vector2Int(CIC.TargetCamera.pixelWidth, CIC.TargetCamera.pixelHeight);
         GUI.enabled = CIC.IsOverrideCameraResolution;
         CIC.ImageResolution = EditorGUILayout.Vector2IntField("Image resolution", CIC.ImageResolution);
         GUI.enabled = true;
