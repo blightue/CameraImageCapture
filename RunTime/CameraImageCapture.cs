@@ -6,11 +6,9 @@ using UnityEngine;
 namespace SuiSuiShou.CIC.Core
 {
     [AddComponentMenu("Camera Image Capture/Capturer")]
-    public class CameraImageCapture : MonoBehaviour, CameraImageCaptureCore
+    public class CameraImageCapture : MonoBehaviour, ICameraImageCaptureCore
     {
         [SerializeField] private Vector2Int imageResolution = new Vector2Int(512, 512);
-        [SerializeField] private Camera targetCamera;
-
 
         [SerializeField] private WriteFileType writeType = WriteFileType.MainThread;
         [SerializeField] private ImageFormat imageFormat = ImageFormat.png;
@@ -23,6 +21,7 @@ namespace SuiSuiShou.CIC.Core
 
         [SerializeField] private bool isOverrideCameraResolution;
 
+        [SerializeField] private Camera targetCamera;
         private Dictionary<FileInfor, int> fileInfors = new Dictionary<FileInfor, int>();
 
         public virtual void Reset()

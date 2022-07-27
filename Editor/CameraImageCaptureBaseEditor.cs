@@ -7,7 +7,7 @@ using SuiSuiShou.CIC.Infor;
 [CanEditMultipleObjects]
 public abstract class CameraImageCaptureBaseEditor : Editor
 {
-    protected CameraImageCaptureCore cic;
+    protected ICameraImageCaptureCore cic;
 
     protected bool showFileSetting = true;
     protected bool showComponents = true;
@@ -24,12 +24,12 @@ public abstract class CameraImageCaptureBaseEditor : Editor
         CaptureInforManager.WriteLocalData(CIC.FileInfors);
     }
 
-    public CameraImageCaptureCore CIC
+    public ICameraImageCaptureCore CIC
     {
         get
         {
             if (cic == null)
-                cic = (CameraImageCaptureCore) target;
+                cic = (ICameraImageCaptureCore) target;
             return cic;
         }
     }

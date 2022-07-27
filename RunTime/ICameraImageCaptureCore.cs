@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SuiSuiShou.CIC.Data;
 using SuiSuiShou.CIC.Infor;
+using System.Threading.Tasks;
 
 namespace SuiSuiShou.CIC.Core
 {
@@ -14,7 +15,7 @@ namespace SuiSuiShou.CIC.Core
         tga
     };
 
-    public interface CameraImageCaptureCore
+    public interface ICameraImageCaptureCore
     {
         public abstract Vector2Int ImageResolution { get; set; }
         public abstract Dictionary<FileInfor, int> FileInfors { get; set; }
@@ -35,7 +36,7 @@ namespace SuiSuiShou.CIC.Core
     {
 #if UNITY_ENABLE_URP
 
-        public static void CaptureAndSaveImage<T>(this T C) where T : CameraImageCaptureCore
+        public static void CaptureAndSaveImage(this ICameraImageCaptureCore C)
         {
             if (C.CheckIsNeedFixedAlpha())
             {
@@ -46,14 +47,15 @@ namespace SuiSuiShou.CIC.Core
                 data.renderPostProcessing = true;
                 Texture2D texWithoutAlpha = C.CaptureImage(C.TargetCamera, C.ImageResolution, 8);
 
-                Color[] colorWithAlpha = texWithAlpha.GetPixels();
-                Color[] colorWithoutAlpha = texWithoutAlpha.GetPixels();
-                for (int i = 0; i < colorWithoutAlpha.Length; i++)
-                {
-                    colorWithoutAlpha[i].a = colorWithAlpha[i].a;
-                }
+                Color[] piexlsWithAlpha = texWithAlpha.GetPixels();
+                Color[] piexlsWithoutAlpha = texWithoutAlpha.GetPixels();
+                // for (int i = 0; i < piexlsWithoutAlpha.Length; i++)
+                // {
+                //     piexlsWithoutAlpha[i].a = piexlsWithAlpha[i].a;
+                // }
+                Parallel.For(0, piexlsWithAlpha.Length, i => { piexlsWithoutAlpha[i].a = piexlsWithAlpha[i].a; });
 
-                texWithoutAlpha.SetPixels(colorWithoutAlpha);
+                texWithoutAlpha.SetPixels(piexlsWithoutAlpha);
 
                 Object.DestroyImmediate(texWithAlpha);
 
@@ -65,7 +67,7 @@ namespace SuiSuiShou.CIC.Core
             }
         }
 
-        private static bool CheckIsNeedFixedAlpha<T>(this T C) where T : CameraImageCaptureCore
+        private static bool CheckIsNeedFixedAlpha(this ICameraImageCaptureCore C)
         {
             if (!UnityEngine.Rendering.GraphicsSettings.defaultRenderPipeline is UnityEngine.Rendering.Universal
                     .UniversalRenderPipelineAsset)
@@ -78,6 +80,10 @@ namespace SuiSuiShou.CIC.Core
 
             if (!data.renderPostProcessing) return false;
 
+            if (!(C.TargetCamera.clearFlags == CameraClearFlags.Nothing ||
+                  C.TargetCamera.clearFlags == CameraClearFlags.SolidColor && C.TargetCamera.backgroundColor.a == 0))
+                return false;
+
             return true;
         }
 #else
@@ -87,8 +93,8 @@ namespace SuiSuiShou.CIC.Core
         }
 #endif
 
-        public static Texture2D CaptureImage<T>(this T C, Camera camera, Vector2Int resolution, int depth)
-            where T : CameraImageCaptureCore
+        public static Texture2D CaptureImage(this ICameraImageCaptureCore C, Camera camera, Vector2Int resolution,
+            int depth)
         {
             if (!C.CameraCheck(camera)) return null;
             RenderTexture cameraTexture = new RenderTexture(resolution.x, resolution.y, depth);
@@ -100,8 +106,9 @@ namespace SuiSuiShou.CIC.Core
             RenderTexture.active = cameraTexture;
 
             if (C.IsLogCap)
-                Debug.Log("Camera rect = " + camera.pixelWidth + " - " + camera.pixelHeight
-                          + "  Screen resolution = " + Screen.width + " - " + Screen.height);
+                // Debug.Log("Camera rect = " + camera.pixelWidth + " - " + camera.pixelHeight
+                //           + "  Screen resolution = " + Screen.width + " - " + Screen.height);
+                Debug.Log($"Capture camera with resolution = {resolution}");
             Texture2D texture2D = new Texture2D(resolution.x, resolution.y, TextureFormat.RGBA32, false);
 
             texture2D.ReadPixels(new Rect(0, 0, resolution.x, resolution.y), 0, 0);
@@ -115,8 +122,8 @@ namespace SuiSuiShou.CIC.Core
             return texture2D;
         }
 
-        public static void StartSaveImage<T>(this T C, string folderPath, string fileName, Texture2D texture)
-            where T : CameraImageCaptureCore
+        public static void StartSaveImage(this ICameraImageCaptureCore C, string folderPath, string fileName,
+            Texture2D texture)
         {
             if (!C.FolderPathCheck(folderPath)) return;
             // fileName = UpdateFileName(fileName);
@@ -178,7 +185,7 @@ namespace SuiSuiShou.CIC.Core
             if (C.IsLogCap) Debug.Log("Capture image save to " + fullpath);
         }
 
-        private static bool CameraCheck<T>(this T C, Camera camera) where T : CameraImageCaptureCore
+        private static bool CameraCheck(this ICameraImageCaptureCore C, Camera camera)
         {
             if (camera == null)
             {
@@ -189,7 +196,7 @@ namespace SuiSuiShou.CIC.Core
             return true;
         }
 
-        private static bool FolderPathCheck<T>(this T C, string path) where T : CameraImageCaptureCore
+        private static bool FolderPathCheck(this ICameraImageCaptureCore C, string path)
         {
             if (path == "" || path == null)
             {
@@ -206,7 +213,7 @@ namespace SuiSuiShou.CIC.Core
             return true;
         }
 
-        private static bool FileNameCheck<T>(this T C, string fileName) where T : CameraImageCaptureCore
+        private static bool FileNameCheck(this ICameraImageCaptureCore C, string fileName)
         {
             if (fileName == "" || fileName == null)
             {

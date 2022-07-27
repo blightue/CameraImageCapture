@@ -6,7 +6,7 @@ using UnityEngine;
 namespace SuiSuiShou.CIC.Core
 {
     [AddComponentMenu("Camera Image Capture/Capturer with config")]
-    public class CameraImageCaptureWithConfig : MonoBehaviour, CameraImageCaptureCore
+    public class CameraImageCaptureWithConfig : MonoBehaviour, ICameraImageCaptureCore
     {
         [HideInInspector] public CapturerConfig Config;
 
