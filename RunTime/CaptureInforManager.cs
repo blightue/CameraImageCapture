@@ -148,7 +148,7 @@ namespace SuiSuiShou.CIC.Infor
         
         private static int IndexFromFilePath(string filePath, FileInfor infor)
         {
-            string[] fileParts = filePath.Split(CameraImageCaptureBase.SerialSeparator);
+            string[] fileParts = filePath.Split('-');
 
             string fileTail = fileParts[fileParts.Length - 1];
             //Debug.Log(fileTail);

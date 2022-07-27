@@ -1,14 +1,12 @@
+using System.Collections.Generic;
 using SuiSuiShou.CIC.Data;
+using SuiSuiShou.CIC.Infor;
 using UnityEngine;
 
 namespace SuiSuiShou.CIC.Core
 {
-    [System.Serializable]
-    public enum ImageFormat
-    { jpg, png, tga };
-
     [AddComponentMenu("Camera Image Capture/Capturer")]
-    public class CameraImageCapture : CameraImageCaptureBase
+    public class CameraImageCapture : MonoBehaviour, ICameraImageCaptureCore
     {
         [SerializeField] private Vector2Int imageResolution = new Vector2Int(512, 512);
 
@@ -20,23 +18,92 @@ namespace SuiSuiShou.CIC.Core
 
         [SerializeField] private string saveFolderPath;
         [SerializeField] private string fileName = "CameraShot";
-        
+
         [SerializeField] private bool isOverrideCameraResolution;
 
-        public override void Reset()
+        [SerializeField] private Camera targetCamera;
+        private Dictionary<FileInfor, int> fileInfors = new Dictionary<FileInfor, int>();
+
+        public virtual void Reset()
         {
-            base.Reset();
+            TargetCamera = Camera.main;
+            FileInfors = CaptureInforManager.ReadLocalData();
             SaveFolderPath = Application.persistentDataPath;
+            Debug.Log("Reset CIC");
         }
 
-        public override Vector2Int ImageResolution { get => imageResolution; set => imageResolution = value; }
-        public override WriteFileType WriteType { get => writeType; set => writeType = value; }
-        public override ImageFormat ImageFormat { get => imageFormat; set => imageFormat = value; }
-        public override string SaveFolderPath { get => saveFolderPath; set => saveFolderPath = value; }
-        public override string FileName { get => fileName; set => fileName = value; }
+        private void OnDisable()
+        {
+#if !UNITY_EDITOR
+            CaptureInforManager.WriteLocalData(FileInfors);
+#endif
+        }
 
-        public override bool IsLogCap { get => isLogCap; set => isLogCap = value; }
-        public override bool IsImageSerial { get => isImageSerial; set => isImageSerial = value; }
-        public override bool IsOverrideCameraResolution { get => isOverrideCameraResolution; set => isOverrideCameraResolution = value; }
+        private void OnEnable()
+        {
+#if !UNITY_EDITOR
+            FileInfors = CaptureInforManager.ReadLocalData();
+#endif
+        }
+
+        public Vector2Int ImageResolution
+        {
+            get => imageResolution;
+            set => imageResolution = value;
+        }
+
+        public Dictionary<FileInfor, int> FileInfors
+        {
+            get => fileInfors;
+            set => fileInfors = value;
+        }
+
+        public Camera TargetCamera
+        {
+            get => targetCamera;
+            set => targetCamera = value;
+        }
+
+        public WriteFileType WriteType
+        {
+            get => writeType;
+            set => writeType = value;
+        }
+
+        public ImageFormat ImageFormat
+        {
+            get => imageFormat;
+            set => imageFormat = value;
+        }
+
+        public string SaveFolderPath
+        {
+            get => saveFolderPath;
+            set => saveFolderPath = value;
+        }
+
+        public string FileName
+        {
+            get => fileName;
+            set => fileName = value;
+        }
+
+        public bool IsLogCap
+        {
+            get => isLogCap;
+            set => isLogCap = value;
+        }
+
+        public bool IsImageSerial
+        {
+            get => isImageSerial;
+            set => isImageSerial = value;
+        }
+
+        public bool IsOverrideCameraResolution
+        {
+            get => isOverrideCameraResolution;
+            set => isOverrideCameraResolution = value;
+        }
     }
 }

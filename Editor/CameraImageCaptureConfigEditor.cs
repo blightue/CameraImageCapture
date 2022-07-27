@@ -1,8 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using SuiSuiShou.CIC.Core;
-using SuiSuiShou.CIC.Data;
-using SuiSuiShou.CIC.Infor;
 
 [CustomEditor(typeof(CameraImageCaptureWithConfig))]
 [CanEditMultipleObjects]
