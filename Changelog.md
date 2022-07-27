@@ -1,6 +1,17 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.0]-2022-07-27
+
+### Update
+
+- Redesign CIC core Interface -> CIC core now is a interface with extension method
+- Alpha fix now check is camera is output alpha channel
+
+### Added
+
+- Implement CICEditorWindow --- Open via Tools->Camera Image Capture->Capturer
+
 ## [0.5.1]-2022-07-24
 
 ### Fixed
