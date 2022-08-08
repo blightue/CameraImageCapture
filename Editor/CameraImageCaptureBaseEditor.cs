@@ -104,8 +104,8 @@ public abstract class CameraImageCaptureBaseEditor : Editor
         if (GUILayout.Button("Capture and save")) CIC.CaptureAndSaveImage();
 #if UNITY_EDITOR_WIN
         if (GUILayout.Button("Show in exporter")) EditorUtility.RevealInFinder(CIC.SaveFolderPath);
-#elif UNITY_EDITOR_MAC
-        if (GUILayout.Button("Reveal In Finder")) EditorUtility.RevealInFinder(CIC.SaveFolderPath);
+#elif UNITY_EDITOR_OSX
+        if (GUILayout.Button("Reveal in Finder")) EditorUtility.RevealInFinder(CIC.SaveFolderPath);
 #endif
     }
 }
