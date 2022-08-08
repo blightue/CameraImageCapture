@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.1]-2022-08-09
+
+### Fixed
+
+- Fixed CIC editor Reveal in Finder button not show on MacOS issue
+- Fixed CaptureAndSave method in build-in render pipeline issue
+
 ## [0.6.0]-2022-07-27
 
 ### Update
