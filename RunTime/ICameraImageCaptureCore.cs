@@ -87,9 +87,9 @@ namespace SuiSuiShou.CIC.Core
             return true;
         }
 #else
-        public void CaptureAndSaveImage()
+        public static void CaptureAndSaveImage(this ICameraImageCaptureCore C)
         {
-            StartSaveImage(SaveFolderPath, FileName, CaptureImage(targetCamera, ImageResolution, 8));
+            C.StartSaveImage(C.SaveFolderPath, C.FileName, C.CaptureImage(C.TargetCamera, C.ImageResolution, 8));
         }
 #endif
 
