@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.2]-2022-08-30
+
+### Fixed
+
+- Fixed CICEditorWindow "CIC" namespace not found issue on mac
+
 ## [0.6.1]-2022-08-09
 
 ### Fixed
