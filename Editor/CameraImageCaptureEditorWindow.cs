@@ -198,7 +198,7 @@ public class CameraImageCaptureEditorWindow : EditorWindow, ICameraImageCaptureC
 #if UNITY_EDITOR_WIN
         if (GUILayout.Button("Show in exporter")) EditorUtility.RevealInFinder(SaveFolderPath);
 #elif UNITY_EDITOR_OSX
-        if (GUILayout.Button("Reveal in Finder")) EditorUtility.RevealInFinder(CIC.SaveFolderPath);
+        if (GUILayout.Button("Reveal in Finder")) EditorUtility.RevealInFinder(SaveFolderPath);
 #endif
     }
 }
