@@ -6,6 +6,8 @@ Capture camera image and save to a specified path.
 
 ![Demo Gif](https://github.com/blightue/UnityCameraImageCapture/blob/main/Resource/Demo.gif)
 
+[Full Documentation](https://blightue.github.io/CameraImageCapture)
+
 ## Installation instructions
 
 ### Unity package manager(Git)
@@ -30,8 +32,6 @@ Capture camera image and save to a specified path.
 Recommend use component **Capture with config**
 
 ![Config Gif](https://github.com/blightue/UnityCameraImageCapture/blob/main/Resource/CaptureConfig.gif)
-
-## Installation instructions
 
 ### Editor
 
