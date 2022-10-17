@@ -19,7 +19,7 @@ public abstract class CameraImageCaptureBaseEditor : Editor
         CIC.FileInfors = CaptureInforManager.ReadLocalData();
     }
 
-    protected virtual void OnDestroy()
+    protected virtual void OnDisable()
     {
         CaptureInforManager.WriteLocalData(CIC.FileInfors);
     }
