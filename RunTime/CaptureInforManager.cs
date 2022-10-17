@@ -91,10 +91,13 @@ namespace SuiSuiShou.CIC.Infor
             filePath = Directory.GetFiles(infor.folderPath, $"{infor.fileName}-*.{infor.imageFormat.ToString()}",
                 SearchOption.TopDirectoryOnly);
 
-            if (loggedCount > 0 && filePath.Length == 0)
+            if (filePath.Length == 0)
             {
-                Debug.Log($"Empty {infor.folderPath} - {infor.fileName}");
-                changedCount = 0;
+                if(loggedCount > 0) 
+                {
+                    Debug.Log($"Empty {infor.folderPath} - {infor.fileName}");
+                    changedCount = 0;
+                }
                 return false;
             }
 
