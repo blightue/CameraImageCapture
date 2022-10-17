@@ -32,7 +32,6 @@ namespace SuiSuiShou.CIC.Data
                 await fs.ReadAsync(bts, 0, bts.Length);
                 result = Encoding.Unicode.GetString(bts);
             }
-
             return result;
         }
 

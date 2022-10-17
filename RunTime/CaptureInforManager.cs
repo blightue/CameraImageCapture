@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using SuiSuiShou.CIC.Core;
+using SuiSuiShou.CIC.Data;
 
 namespace SuiSuiShou.CIC.Infor
 {
@@ -11,6 +12,10 @@ namespace SuiSuiShou.CIC.Infor
         private static string foldPath = Path.Combine(Application.persistentDataPath, "CameraCapture");
         private static string inforPath = Path.Combine(foldPath, "CameraCaptureInfor.json");
 
+        /// <summary>
+        /// Write capture infor to persistent path
+        /// </summary>
+        /// <param name="fileInfors">The capture infor to write</param>
         public static void WriteLocalData(Dictionary<FileInfor, int> fileInfors)
         {
             Queue<FileInfor> fileInforQueue = new Queue<FileInfor>();
@@ -30,14 +35,15 @@ namespace SuiSuiShou.CIC.Infor
 
             string jsonForWrite = JsonUtility.ToJson(captureInfor, true);
 
-            using (StreamWriter streamWrite = new StreamWriter(inforPath))
-            {
-                streamWrite.Write(jsonForWrite);
-            }
+            DataWriter.WriteDataMain(inforPath, jsonForWrite);
 
             // Debug.Log($"Write Capture infor at {inforPath}");
         }
 
+        /// <summary>
+        /// Read capture file infor from disk
+        /// </summary>
+        /// <returns></returns>
         public static Dictionary<FileInfor, int> ReadLocalData()
         {
             //Debug.Log($"Start read Capture infor at {inforPath}");
@@ -47,12 +53,12 @@ namespace SuiSuiShou.CIC.Infor
 
             if (!File.Exists(inforPath)) return fileInforDic;
 
-            string inforJson;
+            // using (StreamReader streamReader = new StreamReader(inforPath)) s
+            // {
+            //     inforJson = streamReader.ReadToEnd();
+            // }
 
-            using (StreamReader streamReader = new StreamReader(inforPath))
-            {
-                inforJson = streamReader.ReadToEnd();
-            }
+            string inforJson = DataReader.ReadDataTextMain(inforPath);
 
             CaptureInfor captureInfor = JsonUtility.FromJson<CaptureInfor>(inforJson);
 
@@ -145,7 +151,7 @@ namespace SuiSuiShou.CIC.Infor
 
             return indexArray;
         }
-        
+
         private static int IndexFromFilePath(string filePath, FileInfor infor)
         {
             string[] fileParts = filePath.Split('-');
@@ -160,7 +166,10 @@ namespace SuiSuiShou.CIC.Infor
     }
 
 
-    [System.Serializable]
+    /// <summary>
+    /// Capture information for serializing to json
+    /// </summary>
+    [Serializable]
     public class CaptureInfor
     {
         public FileInfor[] fileInfors;
@@ -178,6 +187,9 @@ namespace SuiSuiShou.CIC.Infor
         }
     }
 
+    /// <summary>
+    /// Sequenced Capture files information
+    /// </summary>
     [System.Serializable]
     public struct FileInfor
     {

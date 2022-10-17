@@ -11,36 +11,33 @@ namespace SuiSuiShou.CIC.Data
         {
             File.WriteAllBytes(fullPath, data);
         }
-        public static void WriteDataMain(string fullPath, string data)
+        public static void WriteDataMain(string fullPath, string text)
         {
-            File.WriteAllText(fullPath, data);
+            File.WriteAllText(fullPath, text);
         }
-        
-        /*Job System
-        public static void WriteDataJobS(string fullPath, byte[] data)
+
+        public async static void WriteDataAsync(string fullPath, byte[] data)
         {
-            WriteByteJob job = new WriteByteJob(fullPath, data);
+            using (FileStream file = File.Open(fullPath, FileMode.OpenOrCreate))
+            {
+                //file.Seek(0, SeekOrigin.End);
+                await file.WriteAsync(data, 0, data.Length);
+            }
         }
-        public static void WriteDataJobS(string fullPath, string data)
+        public async static void WriteDataAsync(string fullPath, string text)
         {
-            WriteTextJob job = new WriteTextJob(fullPath, data);
-        }
-        */
-        
-        public static void WriteDataTask(string fullPath, byte[] data)
-        {
-            WriteAsyncJob job = new WriteAsyncJob(fullPath, data);
-        }
-        public static void WriteDataTask(string fullPath, string data)
-        {
-            WriteAsyncJob job = new WriteAsyncJob(fullPath, data);
+            using (StreamWriter file = File.CreateText(fullPath))
+            {
+                await file.WriteAsync(text);
+            }
         }
 
 
     }
 
 
-    public class WriteInMainJob
+    /*
+    internal class WriteInMainJob
     {
         public string fullPath;
         public byte[] byteData;
@@ -68,7 +65,7 @@ namespace SuiSuiShou.CIC.Data
         }
     }
 
-    public class WriteAsyncJob
+    internal class WriteAsyncJob
     {
         public string fullPath;
         public byte[] byteData;
@@ -106,7 +103,7 @@ namespace SuiSuiShou.CIC.Data
     }
 
 
-    /* Job system
+    Job system
     public class WriteByteJob
     {
         public string fullPath;

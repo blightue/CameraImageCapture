@@ -29,12 +29,12 @@ namespace SuiSuiShou.CIC.Data
 
         public static void WriteDataTask(string fullPath, byte[] data)
         {
-            WriteAsyncJob job = new WriteAsyncJob(fullPath, data);
+            DataWriter.WriteDataAsync(fullPath, data);
         }
 
         public static void WriteDataTask(string fullPath, string data)
         {
-            WriteAsyncJob job = new WriteAsyncJob(fullPath, data);
+            DataWriter.WriteDataAsync(fullPath,data);
         }
     }
 

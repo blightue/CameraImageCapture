@@ -17,25 +17,58 @@ namespace SuiSuiShou.CIC.Core
 
     public interface ICameraImageCaptureCore
     {
+        /// <summary>
+        /// Capture image resolution
+        /// </summary>
         public abstract Vector2Int ImageResolution { get; set; }
+        /// <summary>
+        /// FileInfor for log image sequence
+        /// </summary>
         public abstract Dictionary<FileInfor, int> FileInfors { get; set; }
+        /// <summary>
+        /// Target camera for capturing
+        /// </summary>
         public abstract Camera TargetCamera { get; set; }
 
+        /// <summary>
+        /// Image file write type
+        /// </summary>
         public abstract WriteFileType WriteType { get; set; }
+        /// <summary>
+        /// Image type
+        /// </summary>
         public abstract ImageFormat ImageFormat { get; set; }
-
+        
+        /// <summary>
+        /// True for logging capture status
+        /// </summary>
         public abstract bool IsLogCap { get; set; }
+        /// <summary>
+        /// True for sequential image file name
+        /// </summary>
         public abstract bool IsImageSerial { get; set; }
+        /// <summary>
+        /// True for changing ImageResolution in editor
+        /// </summary>
         public abstract bool IsOverrideCameraResolution { get; set; }
-
+        
+        /// <summary>
+        /// Fold path for image file to writing
+        /// </summary>
         public abstract string SaveFolderPath { get; set; }
+        /// <summary>
+        /// Image file name
+        /// </summary>
         public abstract string FileName { get; set; }
     }
 
     public static class CameraImageCaptureCoreMethod
     {
 #if UNITY_ENABLE_URP
-
+        /// <summary>
+        /// Capture and save image file base on instance config
+        /// </summary>
+        /// <param name="C"></param>
         public static void CaptureAndSaveImage(this ICameraImageCaptureCore C)
         {
             if (C.CheckIsNeedFixedAlpha())
@@ -87,12 +120,24 @@ namespace SuiSuiShou.CIC.Core
             return true;
         }
 #else
+        /// <summary>
+        /// Capture and save image file base on instance config
+        /// </summary>
+        /// <param name="C"></param>
         public static void CaptureAndSaveImage(this ICameraImageCaptureCore C)
         {
             C.StartSaveImage(C.SaveFolderPath, C.FileName, C.CaptureImage(C.TargetCamera, C.ImageResolution, 8));
         }
 #endif
 
+        /// <summary>
+        /// Capture and return a Texture2D
+        /// </summary>
+        /// <param name="C"></param>
+        /// <param name="camera">target camera</param>
+        /// <param name="resolution">image resolution</param>
+        /// <param name="depth">image depth</param>
+        /// <returns></returns>
         public static Texture2D CaptureImage(this ICameraImageCaptureCore C, Camera camera, Vector2Int resolution,
             int depth)
         {
@@ -122,6 +167,13 @@ namespace SuiSuiShou.CIC.Core
             return texture2D;
         }
 
+        /// <summary>
+        /// Start write image file base on instance config
+        /// </summary>
+        /// <param name="C"></param>
+        /// <param name="folderPath">target folder path</param>
+        /// <param name="fileName">target file name</param>
+        /// <param name="texture">source Texture2D</param>
         public static void StartSaveImage(this ICameraImageCaptureCore C, string folderPath, string fileName,
             Texture2D texture)
         {
@@ -175,11 +227,8 @@ namespace SuiSuiShou.CIC.Core
                     break;
 
                 case WriteFileType.Async:
-                    DataWriter.WriteDataTask(fullpath, saveData);
+                    DataWriter.WriteDataAsync(fullpath, saveData);
                     break;
-                //case WriteFileType.JobSystem:
-                //    DataSaver.WriteDataJobS(fullpath, saveData);
-                //    break;
             }
 
             if (C.IsLogCap) Debug.Log("Capture image save to " + fullpath);
