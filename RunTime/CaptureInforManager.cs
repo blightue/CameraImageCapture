@@ -69,7 +69,7 @@ namespace SuiSuiShou.CIC.Infor
                 captureInfor.fileInfors.Length == 0
                )
             {
-                Debug.Log("CaptureInfor is empty");
+                //Debug.Log("CaptureInfor is empty");
                 return fileInforDic;
             }
 
@@ -99,17 +99,15 @@ namespace SuiSuiShou.CIC.Infor
 
             if (filePath.Length == 0)
             {
-                Debug.Log($"Empty {infor.folderPath} - {infor.fileName}");
-                changedCount = 0;
+                if(loggedCount > 0) 
+                {
+                    Debug.Log($"Empty {infor.folderPath} - {infor.fileName}");
+                    changedCount = 0;
+                }
                 return false;
             }
 
-            // if (filePath.Length == loggedCount )
-            // {
-            //     changedCount = loggedCount;
-            //     Debug.Log("Unchanged");
-            //     return true;
-            // }
+
             int[] indexes = IndexesFromFilePathes(filePath, infor);
             // Debug.Log(indexes[indexes.Length - 1]);
             int lastIndex = indexes[indexes.Length - 1];

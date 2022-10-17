@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.3]-2022-10-17
+
+### Update
+
+- Removed unused log
+
 ## [0.6.2]-2022-08-30
 
 ### Fixed
