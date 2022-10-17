@@ -99,11 +99,8 @@ namespace SuiSuiShou.CIC.Infor
 
             if (filePath.Length == 0)
             {
-                if(loggedCount > 0) 
-                {
-                    Debug.Log($"Empty {infor.folderPath} - {infor.fileName}");
-                    changedCount = 0;
-                }
+                if(loggedCount > 0) Debug.Log($"Files at {infor.folderPath} - {infor.fileName} has been deleted");
+                changedCount = 0;
                 return false;
             }
 
