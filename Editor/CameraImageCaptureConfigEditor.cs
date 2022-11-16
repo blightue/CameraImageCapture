@@ -31,13 +31,17 @@ public class CameraImageCaptureConfigEditor : CameraImageCaptureBaseEditor
 
         if (CICConfig.Config != null)
         {
-            InspectorFileSetting();
-
-            InspectorOthers();
+            EditorGUI.BeginChangeCheck();
+            {
+                InspectorFileSetting();
+                InspectorOthers();
+            }
+            if(EditorGUI.EndChangeCheck())
+                EditorUtility.SetDirty(CICConfig.Config);
         }
         else
         {
-            InspectorNoteSelect();
+            InspectorNotSelect();
         }
 
         GUI.enabled = CICConfig.Config != null;
@@ -45,7 +49,7 @@ public class CameraImageCaptureConfigEditor : CameraImageCaptureBaseEditor
         GUI.enabled = true;
     }
 
-    protected void InspectorNoteSelect()
+    protected void InspectorNotSelect()
     {
         GUILayout.BeginVertical("box");
         EditorGUILayout.LabelField("Select a capture config file first");

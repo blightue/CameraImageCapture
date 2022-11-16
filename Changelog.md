@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.4]-2022-11-16
+
+### Fixed
+
+- Fixed Capture Components wont save editor changes issue
+
 ## [0.6.3]-2022-10-17
 
 ### Update
