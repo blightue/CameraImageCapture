@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.5]-2023-01-27
+
+### Added
+
+- Added a static class `Photographer` as a singleton image capture
+
 ## [0.6.4]-2022-11-16
 
 ### Fixed
