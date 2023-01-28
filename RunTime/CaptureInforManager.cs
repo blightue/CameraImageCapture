@@ -5,6 +5,8 @@ using System.IO;
 using SuiSuiShou.CIC.Core;
 using SuiSuiShou.CIC.Data;
 
+//TODO: Make CaptureInforManager as a static singleton manager
+
 namespace SuiSuiShou.CIC.Infor
 {
     public static class CaptureInforManager

@@ -1,6 +1,6 @@
 # Unity Camera Image Capture
 
-![version](https://badgen.net/badge/version/0.6.3/orange) ![license](https://badgen.net/github/license/blightue/unitycameraImagecapture)
+![version](https://badgen.net/badge/version/0.6.5/orange) ![license](https://badgen.net/github/license/blightue/unitycameraImagecapture)
 
 Capture camera image and save to a specified path.
 
@@ -25,15 +25,19 @@ Capture camera image and save to a specified path.
 4. Select **Add package from disk** from the add menu
 5. Select the **package.json** file in the unzipped folder
 
-## Tutorials
+## Quick Start
 
 ### Version 0.5.0 Update: 
 
 Recommend use component **Capture with config**
 
+Create a config asset by click the plus button in the Project window and follow `Camera Image Capture/Capturer config`
+
 ![Config Gif](https://github.com/blightue/UnityCameraImageCapture/blob/main/Resource/CaptureConfig.gif)
 
 ### Editor
+
+#### Component
 
 1. Add component `CameraImageCapture` to a `GameObject` via `Camera Image Capture/CameraImageCapture`
 
@@ -53,7 +57,34 @@ Recommend use component **Capture with config**
 
 3. Click **Capture and save** button for capturing
 
+#### EditorWindow
+
+1. Open `Camera Image Capture` window via `Tools/Camera Image Capture/Capturer`
+
+2. Add and Config `CaptureConfig` value in the Inspector.
+
+3. Click **Capture and save** button for capturing
+
 ### Runtime
+
+#### Static Singleton
+
+```c#
+using SuiSuiShou.CIC.Core;
+using UnityEngine;
+
+public class SampleScript : MonoBehaviour
+{
+    void Start()
+    {
+        Photographer.IsImageSerial = false;
+        Photographer.ImageResolution = new Vector2Int(1920, 1080);
+        Photographer.CaptureAndSaveImage();
+    }
+}
+```
+
+#### Component
 
 1. Assign the `CameraImageCapture` component  in your code
 
@@ -79,4 +110,3 @@ public class SampleScript : MonoBehaviour
     }
 }
 ```
-
