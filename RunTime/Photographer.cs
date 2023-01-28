@@ -7,7 +7,7 @@ namespace SuiSuiShou.CIC.Core
 {
     public static class Photographer
     {
-        private static ImageCapture _imageCapture;
+        private static ImageCapture _imageCapture = new ImageCapture();
         
         /// <summary>
         /// Capture image resolution
