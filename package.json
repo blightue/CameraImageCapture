@@ -1,5 +1,5 @@
 {
-  "name": "com.suisuishou.cameraimagecapture",
+  "name": "net.suisuishou.cameraimagecapture",
   "version": "0.6.5",
   "displayName": "CameraImageCapture",
   "description": "Capture camera image and save to a specified path.",
@@ -13,7 +13,7 @@
   "author": {
     "name": "SuiSuiShou",
     "email": "bligtue@gmail.com",
-    "url": "https://blightue.github.io/"
+    "url": "http://suisuishou.net"
   },
   "type": "tool",
   "hideInEditor": false
