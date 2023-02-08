@@ -33,7 +33,7 @@ Recommend use component **Capture with config**
 
 Create a config asset by click the plus button in the Project window and follow `Camera Image Capture/Capturer config`
 
-![Config Gif](https://i.niupic.com/images/2023/02/08/ajOZ.gif)
+![CaptureConfig.gif](https://s2.loli.net/2023/02/08/xTuFjZ1rdyza8G5.gif)
 
 ### Editor
 
