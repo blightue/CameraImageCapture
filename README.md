@@ -4,7 +4,7 @@
 
 Capture camera image and save to a specified path.
 
-![Demo Gif](https://i.imgur.com/DtMKPLW.gif)
+![Demo Gif](https://i.niupic.com/images/2023/02/08/ajOY.gif)
 
 [Full Documentation](https://blightue.github.io/CameraImageCapture)
 
@@ -33,7 +33,7 @@ Recommend use component **Capture with config**
 
 Create a config asset by click the plus button in the Project window and follow `Camera Image Capture/Capturer config`
 
-![Config Gif](https://i.imgur.com/f0kd8i9.gif)
+![Config Gif](https://i.niupic.com/images/2023/02/08/ajOZ.gif)
 
 ### Editor
 
