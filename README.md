@@ -4,7 +4,7 @@
 
 Capture camera image and save to a specified path.
 
-![Demo Gif](https://i.niupic.com/images/2023/02/08/ajOY.gif)
+![Demo Gif](https://i.imgur.com/DtMKPLW.gif)
 
 [Full Documentation](https://blightue.github.io/CameraImageCapture)
 
