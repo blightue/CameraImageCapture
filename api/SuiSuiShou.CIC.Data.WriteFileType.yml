@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: SuiSuiShou.CIC.Data.WriteFileType
+  commentId: T:SuiSuiShou.CIC.Data.WriteFileType
+  id: WriteFileType
+  parent: SuiSuiShou.CIC.Data
+  children:
+  - SuiSuiShou.CIC.Data.WriteFileType.Async
+  - SuiSuiShou.CIC.Data.WriteFileType.MainThread
+  langs:
+  - csharp
+  - vb
+  name: WriteFileType
+  nameWithType: WriteFileType
+  fullName: SuiSuiShou.CIC.Data.WriteFileType
+  type: Enum
+  source:
+    remote:
+      path: RunTime/DataWriter.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: WriteFileType
+    path: ../../CameraImageCapture/RunTime/DataWriter.cs
+    startLine: 182
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Data
+  syntax:
+    content: public enum WriteFileType
+    content.vb: Public Enum WriteFileType
+- uid: SuiSuiShou.CIC.Data.WriteFileType.MainThread
+  commentId: F:SuiSuiShou.CIC.Data.WriteFileType.MainThread
+  id: MainThread
+  parent: SuiSuiShou.CIC.Data.WriteFileType
+  langs:
+  - csharp
+  - vb
+  name: MainThread
+  nameWithType: WriteFileType.MainThread
+  fullName: SuiSuiShou.CIC.Data.WriteFileType.MainThread
+  type: Field
+  source:
+    remote:
+      path: RunTime/DataWriter.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: MainThread
+    path: ../../CameraImageCapture/RunTime/DataWriter.cs
+    startLine: 184
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Data
+  syntax:
+    content: MainThread = 0
+    return:
+      type: SuiSuiShou.CIC.Data.WriteFileType
+- uid: SuiSuiShou.CIC.Data.WriteFileType.Async
+  commentId: F:SuiSuiShou.CIC.Data.WriteFileType.Async
+  id: Async
+  parent: SuiSuiShou.CIC.Data.WriteFileType
+  langs:
+  - csharp
+  - vb
+  name: Async
+  nameWithType: WriteFileType.Async
+  fullName: SuiSuiShou.CIC.Data.WriteFileType.Async
+  type: Field
+  source:
+    remote:
+      path: RunTime/DataWriter.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: Async
+    path: ../../CameraImageCapture/RunTime/DataWriter.cs
+    startLine: 185
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Data
+  syntax:
+    content: Async = 1
+    return:
+      type: SuiSuiShou.CIC.Data.WriteFileType
+references:
+- uid: SuiSuiShou.CIC.Data
+  commentId: N:SuiSuiShou.CIC.Data
+  name: SuiSuiShou.CIC.Data
+  nameWithType: SuiSuiShou.CIC.Data
+  fullName: SuiSuiShou.CIC.Data
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Data
+    name: Data
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Data
+    name: Data
+- uid: SuiSuiShou.CIC.Data.WriteFileType
+  commentId: T:SuiSuiShou.CIC.Data.WriteFileType
+  parent: SuiSuiShou.CIC.Data
+  name: WriteFileType
+  nameWithType: WriteFileType
+  fullName: SuiSuiShou.CIC.Data.WriteFileType

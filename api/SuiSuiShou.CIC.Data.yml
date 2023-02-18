@@ -1,0 +1,64 @@
+### YamlMime:ManagedReference
+items:
+- uid: SuiSuiShou.CIC.Data
+  commentId: N:SuiSuiShou.CIC.Data
+  id: SuiSuiShou.CIC.Data
+  children:
+  - SuiSuiShou.CIC.Data.DataReader
+  - SuiSuiShou.CIC.Data.DataSaver
+  - SuiSuiShou.CIC.Data.DataWriter
+  - SuiSuiShou.CIC.Data.WriteFileType
+  langs:
+  - csharp
+  - vb
+  name: SuiSuiShou.CIC.Data
+  nameWithType: SuiSuiShou.CIC.Data
+  fullName: SuiSuiShou.CIC.Data
+  type: Namespace
+  assemblies:
+  - suisuishou.cameraimagecapture
+references:
+- uid: SuiSuiShou.CIC.Data.DataWriter
+  commentId: T:SuiSuiShou.CIC.Data.DataWriter
+  name: DataWriter
+  nameWithType: DataWriter
+  fullName: SuiSuiShou.CIC.Data.DataWriter
+- uid: SuiSuiShou.CIC.Data.WriteFileType
+  commentId: T:SuiSuiShou.CIC.Data.WriteFileType
+  parent: SuiSuiShou.CIC.Data
+  name: WriteFileType
+  nameWithType: WriteFileType
+  fullName: SuiSuiShou.CIC.Data.WriteFileType
+- uid: SuiSuiShou.CIC.Data.DataSaver
+  commentId: T:SuiSuiShou.CIC.Data.DataSaver
+  name: DataSaver
+  nameWithType: DataSaver
+  fullName: SuiSuiShou.CIC.Data.DataSaver
+- uid: SuiSuiShou.CIC.Data.DataReader
+  commentId: T:SuiSuiShou.CIC.Data.DataReader
+  name: DataReader
+  nameWithType: DataReader
+  fullName: SuiSuiShou.CIC.Data.DataReader
+- uid: SuiSuiShou.CIC.Data
+  commentId: N:SuiSuiShou.CIC.Data
+  name: SuiSuiShou.CIC.Data
+  nameWithType: SuiSuiShou.CIC.Data
+  fullName: SuiSuiShou.CIC.Data
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Data
+    name: Data
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Data
+    name: Data

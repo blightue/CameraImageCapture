@@ -1,0 +1,38 @@
+### YamlMime:TableOfContent
+- uid: SuiSuiShou.CIC.Core
+  name: SuiSuiShou.CIC.Core
+  items:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCapture
+    name: CameraImageCapture
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+    name: CameraImageCaptureCoreMethod
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureWithConfig
+    name: CameraImageCaptureWithConfig
+  - uid: SuiSuiShou.CIC.Core.CapturerConfig
+    name: CapturerConfig
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - uid: SuiSuiShou.CIC.Core.ImageFormat
+    name: ImageFormat
+  - uid: SuiSuiShou.CIC.Core.Photographer
+    name: Photographer
+- uid: SuiSuiShou.CIC.Data
+  name: SuiSuiShou.CIC.Data
+  items:
+  - uid: SuiSuiShou.CIC.Data.DataReader
+    name: DataReader
+  - uid: SuiSuiShou.CIC.Data.DataSaver
+    name: DataSaver
+  - uid: SuiSuiShou.CIC.Data.DataWriter
+    name: DataWriter
+  - uid: SuiSuiShou.CIC.Data.WriteFileType
+    name: WriteFileType
+- uid: SuiSuiShou.CIC.Infor
+  name: SuiSuiShou.CIC.Infor
+  items:
+  - uid: SuiSuiShou.CIC.Infor.CaptureInfor
+    name: CaptureInfor
+  - uid: SuiSuiShou.CIC.Infor.CaptureInforManager
+    name: CaptureInforManager
+  - uid: SuiSuiShou.CIC.Infor.FileInfor
+    name: FileInfor

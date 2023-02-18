@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: SuiSuiShou.CIC.Infor
+  commentId: N:SuiSuiShou.CIC.Infor
+  id: SuiSuiShou.CIC.Infor
+  children:
+  - SuiSuiShou.CIC.Infor.CaptureInfor
+  - SuiSuiShou.CIC.Infor.CaptureInforManager
+  - SuiSuiShou.CIC.Infor.FileInfor
+  langs:
+  - csharp
+  - vb
+  name: SuiSuiShou.CIC.Infor
+  nameWithType: SuiSuiShou.CIC.Infor
+  fullName: SuiSuiShou.CIC.Infor
+  type: Namespace
+  assemblies:
+  - suisuishou.cameraimagecapture
+references:
+- uid: SuiSuiShou.CIC.Infor.CaptureInforManager
+  commentId: T:SuiSuiShou.CIC.Infor.CaptureInforManager
+  name: CaptureInforManager
+  nameWithType: CaptureInforManager
+  fullName: SuiSuiShou.CIC.Infor.CaptureInforManager
+- uid: SuiSuiShou.CIC.Infor.CaptureInfor
+  commentId: T:SuiSuiShou.CIC.Infor.CaptureInfor
+  name: CaptureInfor
+  nameWithType: CaptureInfor
+  fullName: SuiSuiShou.CIC.Infor.CaptureInfor
+- uid: SuiSuiShou.CIC.Infor.FileInfor
+  commentId: T:SuiSuiShou.CIC.Infor.FileInfor
+  name: FileInfor
+  nameWithType: FileInfor
+  fullName: SuiSuiShou.CIC.Infor.FileInfor

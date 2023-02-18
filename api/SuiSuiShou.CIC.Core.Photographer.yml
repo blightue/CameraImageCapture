@@ -1,0 +1,708 @@
+### YamlMime:ManagedReference
+items:
+- uid: SuiSuiShou.CIC.Core.Photographer
+  commentId: T:SuiSuiShou.CIC.Core.Photographer
+  id: Photographer
+  parent: SuiSuiShou.CIC.Core
+  children:
+  - SuiSuiShou.CIC.Core.Photographer.CaptureAndSaveImage
+  - SuiSuiShou.CIC.Core.Photographer.FileName
+  - SuiSuiShou.CIC.Core.Photographer.ImageFormat
+  - SuiSuiShou.CIC.Core.Photographer.ImageResolution
+  - SuiSuiShou.CIC.Core.Photographer.IsImageSerial
+  - SuiSuiShou.CIC.Core.Photographer.IsLogCap
+  - SuiSuiShou.CIC.Core.Photographer.IsOverrideCameraResolution
+  - SuiSuiShou.CIC.Core.Photographer.SaveFolderPath
+  - SuiSuiShou.CIC.Core.Photographer.TargetCamera
+  - SuiSuiShou.CIC.Core.Photographer.WriteType
+  langs:
+  - csharp
+  - vb
+  name: Photographer
+  nameWithType: Photographer
+  fullName: SuiSuiShou.CIC.Core.Photographer
+  type: Class
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: Photographer
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 7
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  syntax:
+    content: public static class Photographer
+    content.vb: Public Module Photographer
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: SuiSuiShou.CIC.Core.Photographer.ImageResolution
+  commentId: P:SuiSuiShou.CIC.Core.Photographer.ImageResolution
+  id: ImageResolution
+  parent: SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: ImageResolution
+  nameWithType: Photographer.ImageResolution
+  fullName: SuiSuiShou.CIC.Core.Photographer.ImageResolution
+  type: Property
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: ImageResolution
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 14
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nCapture image resolution\n"
+  example: []
+  syntax:
+    content: public static Vector2Int ImageResolution { get; set; }
+    parameters: []
+    return:
+      type: UnityEngine.Vector2Int
+    content.vb: Public Shared Property ImageResolution As Vector2Int
+  overload: SuiSuiShou.CIC.Core.Photographer.ImageResolution*
+- uid: SuiSuiShou.CIC.Core.Photographer.TargetCamera
+  commentId: P:SuiSuiShou.CIC.Core.Photographer.TargetCamera
+  id: TargetCamera
+  parent: SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: TargetCamera
+  nameWithType: Photographer.TargetCamera
+  fullName: SuiSuiShou.CIC.Core.Photographer.TargetCamera
+  type: Property
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: TargetCamera
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 18
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nTarget camera for capturing\n"
+  example: []
+  syntax:
+    content: public static Camera TargetCamera { get; set; }
+    parameters: []
+    return:
+      type: UnityEngine.Camera
+    content.vb: Public Shared Property TargetCamera As Camera
+  overload: SuiSuiShou.CIC.Core.Photographer.TargetCamera*
+- uid: SuiSuiShou.CIC.Core.Photographer.WriteType
+  commentId: P:SuiSuiShou.CIC.Core.Photographer.WriteType
+  id: WriteType
+  parent: SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: WriteType
+  nameWithType: Photographer.WriteType
+  fullName: SuiSuiShou.CIC.Core.Photographer.WriteType
+  type: Property
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: WriteType
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 22
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nImage file write type\n"
+  example: []
+  syntax:
+    content: public static WriteFileType WriteType { get; set; }
+    parameters: []
+    return:
+      type: SuiSuiShou.CIC.Data.WriteFileType
+    content.vb: Public Shared Property WriteType As WriteFileType
+  overload: SuiSuiShou.CIC.Core.Photographer.WriteType*
+- uid: SuiSuiShou.CIC.Core.Photographer.ImageFormat
+  commentId: P:SuiSuiShou.CIC.Core.Photographer.ImageFormat
+  id: ImageFormat
+  parent: SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: ImageFormat
+  nameWithType: Photographer.ImageFormat
+  fullName: SuiSuiShou.CIC.Core.Photographer.ImageFormat
+  type: Property
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: ImageFormat
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 26
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nImage type\n"
+  example: []
+  syntax:
+    content: public static ImageFormat ImageFormat { get; set; }
+    parameters: []
+    return:
+      type: SuiSuiShou.CIC.Core.ImageFormat
+    content.vb: Public Shared Property ImageFormat As ImageFormat
+  overload: SuiSuiShou.CIC.Core.Photographer.ImageFormat*
+- uid: SuiSuiShou.CIC.Core.Photographer.IsLogCap
+  commentId: P:SuiSuiShou.CIC.Core.Photographer.IsLogCap
+  id: IsLogCap
+  parent: SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: IsLogCap
+  nameWithType: Photographer.IsLogCap
+  fullName: SuiSuiShou.CIC.Core.Photographer.IsLogCap
+  type: Property
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: IsLogCap
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 30
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nTrue for logging capture status\n"
+  example: []
+  syntax:
+    content: public static bool IsLogCap { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property IsLogCap As Boolean
+  overload: SuiSuiShou.CIC.Core.Photographer.IsLogCap*
+- uid: SuiSuiShou.CIC.Core.Photographer.IsImageSerial
+  commentId: P:SuiSuiShou.CIC.Core.Photographer.IsImageSerial
+  id: IsImageSerial
+  parent: SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: IsImageSerial
+  nameWithType: Photographer.IsImageSerial
+  fullName: SuiSuiShou.CIC.Core.Photographer.IsImageSerial
+  type: Property
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: IsImageSerial
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 34
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nTrue for sequential image file name\n"
+  example: []
+  syntax:
+    content: public static bool IsImageSerial { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property IsImageSerial As Boolean
+  overload: SuiSuiShou.CIC.Core.Photographer.IsImageSerial*
+- uid: SuiSuiShou.CIC.Core.Photographer.IsOverrideCameraResolution
+  commentId: P:SuiSuiShou.CIC.Core.Photographer.IsOverrideCameraResolution
+  id: IsOverrideCameraResolution
+  parent: SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: IsOverrideCameraResolution
+  nameWithType: Photographer.IsOverrideCameraResolution
+  fullName: SuiSuiShou.CIC.Core.Photographer.IsOverrideCameraResolution
+  type: Property
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: IsOverrideCameraResolution
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 38
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nTrue for changing ImageResolution in editor\n"
+  example: []
+  syntax:
+    content: public static bool IsOverrideCameraResolution { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property IsOverrideCameraResolution As Boolean
+  overload: SuiSuiShou.CIC.Core.Photographer.IsOverrideCameraResolution*
+- uid: SuiSuiShou.CIC.Core.Photographer.SaveFolderPath
+  commentId: P:SuiSuiShou.CIC.Core.Photographer.SaveFolderPath
+  id: SaveFolderPath
+  parent: SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: SaveFolderPath
+  nameWithType: Photographer.SaveFolderPath
+  fullName: SuiSuiShou.CIC.Core.Photographer.SaveFolderPath
+  type: Property
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: SaveFolderPath
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 42
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nFold path for image file to writing\n"
+  example: []
+  syntax:
+    content: public static string SaveFolderPath { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared Property SaveFolderPath As String
+  overload: SuiSuiShou.CIC.Core.Photographer.SaveFolderPath*
+- uid: SuiSuiShou.CIC.Core.Photographer.FileName
+  commentId: P:SuiSuiShou.CIC.Core.Photographer.FileName
+  id: FileName
+  parent: SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: FileName
+  nameWithType: Photographer.FileName
+  fullName: SuiSuiShou.CIC.Core.Photographer.FileName
+  type: Property
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: FileName
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 46
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nImage file name\n"
+  example: []
+  syntax:
+    content: public static string FileName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared Property FileName As String
+  overload: SuiSuiShou.CIC.Core.Photographer.FileName*
+- uid: SuiSuiShou.CIC.Core.Photographer.CaptureAndSaveImage
+  commentId: M:SuiSuiShou.CIC.Core.Photographer.CaptureAndSaveImage
+  id: CaptureAndSaveImage
+  parent: SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: CaptureAndSaveImage()
+  nameWithType: Photographer.CaptureAndSaveImage()
+  fullName: SuiSuiShou.CIC.Core.Photographer.CaptureAndSaveImage()
+  type: Method
+  source:
+    remote:
+      path: RunTime/Photographer.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: CaptureAndSaveImage
+    path: ../../CameraImageCapture/RunTime/Photographer.cs
+    startLine: 51
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nCapture and save image file base on this singleton config\n"
+  example: []
+  syntax:
+    content: public static void CaptureAndSaveImage()
+    content.vb: Public Shared Sub CaptureAndSaveImage()
+  overload: SuiSuiShou.CIC.Core.Photographer.CaptureAndSaveImage*
+references:
+- uid: SuiSuiShou.CIC.Core
+  commentId: N:SuiSuiShou.CIC.Core
+  name: SuiSuiShou.CIC.Core
+  nameWithType: SuiSuiShou.CIC.Core
+  fullName: SuiSuiShou.CIC.Core
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Core
+    name: Core
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Core
+    name: Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SuiSuiShou.CIC.Core.Photographer.ImageResolution*
+  commentId: Overload:SuiSuiShou.CIC.Core.Photographer.ImageResolution
+  name: ImageResolution
+  nameWithType: Photographer.ImageResolution
+  fullName: SuiSuiShou.CIC.Core.Photographer.ImageResolution
+- uid: UnityEngine.Vector2Int
+  commentId: T:UnityEngine.Vector2Int
+  parent: UnityEngine
+  isExternal: true
+  name: Vector2Int
+  nameWithType: Vector2Int
+  fullName: UnityEngine.Vector2Int
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: SuiSuiShou.CIC.Core.Photographer.TargetCamera*
+  commentId: Overload:SuiSuiShou.CIC.Core.Photographer.TargetCamera
+  name: TargetCamera
+  nameWithType: Photographer.TargetCamera
+  fullName: SuiSuiShou.CIC.Core.Photographer.TargetCamera
+- uid: UnityEngine.Camera
+  commentId: T:UnityEngine.Camera
+  parent: UnityEngine
+  isExternal: true
+  name: Camera
+  nameWithType: Camera
+  fullName: UnityEngine.Camera
+- uid: SuiSuiShou.CIC.Core.Photographer.WriteType*
+  commentId: Overload:SuiSuiShou.CIC.Core.Photographer.WriteType
+  name: WriteType
+  nameWithType: Photographer.WriteType
+  fullName: SuiSuiShou.CIC.Core.Photographer.WriteType
+- uid: SuiSuiShou.CIC.Data.WriteFileType
+  commentId: T:SuiSuiShou.CIC.Data.WriteFileType
+  parent: SuiSuiShou.CIC.Data
+  name: WriteFileType
+  nameWithType: WriteFileType
+  fullName: SuiSuiShou.CIC.Data.WriteFileType
+- uid: SuiSuiShou.CIC.Data
+  commentId: N:SuiSuiShou.CIC.Data
+  name: SuiSuiShou.CIC.Data
+  nameWithType: SuiSuiShou.CIC.Data
+  fullName: SuiSuiShou.CIC.Data
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Data
+    name: Data
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Data
+    name: Data
+- uid: SuiSuiShou.CIC.Core.Photographer.ImageFormat*
+  commentId: Overload:SuiSuiShou.CIC.Core.Photographer.ImageFormat
+  name: ImageFormat
+  nameWithType: Photographer.ImageFormat
+  fullName: SuiSuiShou.CIC.Core.Photographer.ImageFormat
+- uid: SuiSuiShou.CIC.Core.ImageFormat
+  commentId: T:SuiSuiShou.CIC.Core.ImageFormat
+  parent: SuiSuiShou.CIC.Core
+  name: ImageFormat
+  nameWithType: ImageFormat
+  fullName: SuiSuiShou.CIC.Core.ImageFormat
+- uid: SuiSuiShou.CIC.Core.Photographer.IsLogCap*
+  commentId: Overload:SuiSuiShou.CIC.Core.Photographer.IsLogCap
+  name: IsLogCap
+  nameWithType: Photographer.IsLogCap
+  fullName: SuiSuiShou.CIC.Core.Photographer.IsLogCap
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: SuiSuiShou.CIC.Core.Photographer.IsImageSerial*
+  commentId: Overload:SuiSuiShou.CIC.Core.Photographer.IsImageSerial
+  name: IsImageSerial
+  nameWithType: Photographer.IsImageSerial
+  fullName: SuiSuiShou.CIC.Core.Photographer.IsImageSerial
+- uid: SuiSuiShou.CIC.Core.Photographer.IsOverrideCameraResolution*
+  commentId: Overload:SuiSuiShou.CIC.Core.Photographer.IsOverrideCameraResolution
+  name: IsOverrideCameraResolution
+  nameWithType: Photographer.IsOverrideCameraResolution
+  fullName: SuiSuiShou.CIC.Core.Photographer.IsOverrideCameraResolution
+- uid: SuiSuiShou.CIC.Core.Photographer.SaveFolderPath*
+  commentId: Overload:SuiSuiShou.CIC.Core.Photographer.SaveFolderPath
+  name: SaveFolderPath
+  nameWithType: Photographer.SaveFolderPath
+  fullName: SuiSuiShou.CIC.Core.Photographer.SaveFolderPath
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: SuiSuiShou.CIC.Core.Photographer.FileName*
+  commentId: Overload:SuiSuiShou.CIC.Core.Photographer.FileName
+  name: FileName
+  nameWithType: Photographer.FileName
+  fullName: SuiSuiShou.CIC.Core.Photographer.FileName
+- uid: SuiSuiShou.CIC.Core.Photographer.CaptureAndSaveImage*
+  commentId: Overload:SuiSuiShou.CIC.Core.Photographer.CaptureAndSaveImage
+  name: CaptureAndSaveImage
+  nameWithType: Photographer.CaptureAndSaveImage
+  fullName: SuiSuiShou.CIC.Core.Photographer.CaptureAndSaveImage

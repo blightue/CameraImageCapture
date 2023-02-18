@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: SuiSuiShou.CIC.Core
+  commentId: N:SuiSuiShou.CIC.Core
+  id: SuiSuiShou.CIC.Core
+  children:
+  - SuiSuiShou.CIC.Core.CameraImageCapture
+  - SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+  - SuiSuiShou.CIC.Core.CameraImageCaptureWithConfig
+  - SuiSuiShou.CIC.Core.CapturerConfig
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  - SuiSuiShou.CIC.Core.ImageFormat
+  - SuiSuiShou.CIC.Core.Photographer
+  langs:
+  - csharp
+  - vb
+  name: SuiSuiShou.CIC.Core
+  nameWithType: SuiSuiShou.CIC.Core
+  fullName: SuiSuiShou.CIC.Core
+  type: Namespace
+  assemblies:
+  - suisuishou.cameraimagecapture
+references:
+- uid: SuiSuiShou.CIC.Core.Photographer
+  commentId: T:SuiSuiShou.CIC.Core.Photographer
+  name: Photographer
+  nameWithType: Photographer
+  fullName: SuiSuiShou.CIC.Core.Photographer
+- uid: SuiSuiShou.CIC.Core.CameraImageCapture
+  commentId: T:SuiSuiShou.CIC.Core.CameraImageCapture
+  name: CameraImageCapture
+  nameWithType: CameraImageCapture
+  fullName: SuiSuiShou.CIC.Core.CameraImageCapture
+- uid: SuiSuiShou.CIC.Core.CapturerConfig
+  commentId: T:SuiSuiShou.CIC.Core.CapturerConfig
+  parent: SuiSuiShou.CIC.Core
+  name: CapturerConfig
+  nameWithType: CapturerConfig
+  fullName: SuiSuiShou.CIC.Core.CapturerConfig
+- uid: SuiSuiShou.CIC.Core.ImageFormat
+  commentId: T:SuiSuiShou.CIC.Core.ImageFormat
+  parent: SuiSuiShou.CIC.Core
+  name: ImageFormat
+  nameWithType: ImageFormat
+  fullName: SuiSuiShou.CIC.Core.ImageFormat
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  commentId: T:SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  parent: SuiSuiShou.CIC.Core
+  name: ICameraImageCaptureCore
+  nameWithType: ICameraImageCaptureCore
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+- uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+  commentId: T:SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+  parent: SuiSuiShou.CIC.Core
+  name: CameraImageCaptureCoreMethod
+  nameWithType: CameraImageCaptureCoreMethod
+  fullName: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+- uid: SuiSuiShou.CIC.Core.CameraImageCaptureWithConfig
+  commentId: T:SuiSuiShou.CIC.Core.CameraImageCaptureWithConfig
+  name: CameraImageCaptureWithConfig
+  nameWithType: CameraImageCaptureWithConfig
+  fullName: SuiSuiShou.CIC.Core.CameraImageCaptureWithConfig
+- uid: SuiSuiShou.CIC.Core
+  commentId: N:SuiSuiShou.CIC.Core
+  name: SuiSuiShou.CIC.Core
+  nameWithType: SuiSuiShou.CIC.Core
+  fullName: SuiSuiShou.CIC.Core
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Core
+    name: Core
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Core
+    name: Core

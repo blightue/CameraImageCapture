@@ -1,0 +1,445 @@
+### YamlMime:ManagedReference
+items:
+- uid: SuiSuiShou.CIC.Infor.CaptureInfor
+  commentId: T:SuiSuiShou.CIC.Infor.CaptureInfor
+  id: CaptureInfor
+  parent: SuiSuiShou.CIC.Infor
+  children:
+  - SuiSuiShou.CIC.Infor.CaptureInfor.#ctor
+  - SuiSuiShou.CIC.Infor.CaptureInfor.#ctor(SuiSuiShou.CIC.Infor.FileInfor[],System.Int32[])
+  - SuiSuiShou.CIC.Infor.CaptureInfor.fileCount
+  - SuiSuiShou.CIC.Infor.CaptureInfor.fileInfors
+  langs:
+  - csharp
+  - vb
+  name: CaptureInfor
+  nameWithType: CaptureInfor
+  fullName: SuiSuiShou.CIC.Infor.CaptureInfor
+  type: Class
+  source:
+    remote:
+      path: RunTime/CaptureInforManager.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: CaptureInfor
+    path: ../../CameraImageCapture/RunTime/CaptureInforManager.cs
+    startLine: 168
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Infor
+  summary: "\nCapture information for serializing to json\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class CaptureInfor
+    content.vb: >-
+      <Serializable>
+
+      Public Class CaptureInfor
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: SuiSuiShou.CIC.Infor.CaptureInfor.fileInfors
+  commentId: F:SuiSuiShou.CIC.Infor.CaptureInfor.fileInfors
+  id: fileInfors
+  parent: SuiSuiShou.CIC.Infor.CaptureInfor
+  langs:
+  - csharp
+  - vb
+  name: fileInfors
+  nameWithType: CaptureInfor.fileInfors
+  fullName: SuiSuiShou.CIC.Infor.CaptureInfor.fileInfors
+  type: Field
+  source:
+    remote:
+      path: RunTime/CaptureInforManager.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: fileInfors
+    path: ../../CameraImageCapture/RunTime/CaptureInforManager.cs
+    startLine: 171
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Infor
+  syntax:
+    content: public FileInfor[] fileInfors
+    return:
+      type: SuiSuiShou.CIC.Infor.FileInfor[]
+    content.vb: Public fileInfors As FileInfor()
+- uid: SuiSuiShou.CIC.Infor.CaptureInfor.fileCount
+  commentId: F:SuiSuiShou.CIC.Infor.CaptureInfor.fileCount
+  id: fileCount
+  parent: SuiSuiShou.CIC.Infor.CaptureInfor
+  langs:
+  - csharp
+  - vb
+  name: fileCount
+  nameWithType: CaptureInfor.fileCount
+  fullName: SuiSuiShou.CIC.Infor.CaptureInfor.fileCount
+  type: Field
+  source:
+    remote:
+      path: RunTime/CaptureInforManager.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: fileCount
+    path: ../../CameraImageCapture/RunTime/CaptureInforManager.cs
+    startLine: 172
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Infor
+  syntax:
+    content: public int[] fileCount
+    return:
+      type: System.Int32[]
+    content.vb: Public fileCount As Integer()
+- uid: SuiSuiShou.CIC.Infor.CaptureInfor.#ctor(SuiSuiShou.CIC.Infor.FileInfor[],System.Int32[])
+  commentId: M:SuiSuiShou.CIC.Infor.CaptureInfor.#ctor(SuiSuiShou.CIC.Infor.FileInfor[],System.Int32[])
+  id: '#ctor(SuiSuiShou.CIC.Infor.FileInfor[],System.Int32[])'
+  parent: SuiSuiShou.CIC.Infor.CaptureInfor
+  langs:
+  - csharp
+  - vb
+  name: CaptureInfor(FileInfor[], int[])
+  nameWithType: CaptureInfor.CaptureInfor(FileInfor[], int[])
+  fullName: SuiSuiShou.CIC.Infor.CaptureInfor.CaptureInfor(SuiSuiShou.CIC.Infor.FileInfor[], int[])
+  type: Constructor
+  source:
+    remote:
+      path: RunTime/CaptureInforManager.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: .ctor
+    path: ../../CameraImageCapture/RunTime/CaptureInforManager.cs
+    startLine: 175
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Infor
+  syntax:
+    content: public CaptureInfor(FileInfor[] fileInfors, int[] fileCount)
+    parameters:
+    - id: fileInfors
+      type: SuiSuiShou.CIC.Infor.FileInfor[]
+    - id: fileCount
+      type: System.Int32[]
+    content.vb: Public Sub New(fileInfors As FileInfor(), fileCount As Integer())
+  overload: SuiSuiShou.CIC.Infor.CaptureInfor.#ctor*
+  nameWithType.vb: CaptureInfor.New(FileInfor(), Integer())
+  fullName.vb: SuiSuiShou.CIC.Infor.CaptureInfor.New(SuiSuiShou.CIC.Infor.FileInfor(), Integer())
+  name.vb: New(FileInfor(), Integer())
+- uid: SuiSuiShou.CIC.Infor.CaptureInfor.#ctor
+  commentId: M:SuiSuiShou.CIC.Infor.CaptureInfor.#ctor
+  id: '#ctor'
+  parent: SuiSuiShou.CIC.Infor.CaptureInfor
+  langs:
+  - csharp
+  - vb
+  name: CaptureInfor()
+  nameWithType: CaptureInfor.CaptureInfor()
+  fullName: SuiSuiShou.CIC.Infor.CaptureInfor.CaptureInfor()
+  type: Constructor
+  source:
+    remote:
+      path: RunTime/CaptureInforManager.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: .ctor
+    path: ../../CameraImageCapture/RunTime/CaptureInforManager.cs
+    startLine: 181
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Infor
+  syntax:
+    content: public CaptureInfor()
+    content.vb: Public Sub New()
+  overload: SuiSuiShou.CIC.Infor.CaptureInfor.#ctor*
+  nameWithType.vb: CaptureInfor.New()
+  fullName.vb: SuiSuiShou.CIC.Infor.CaptureInfor.New()
+  name.vb: New()
+references:
+- uid: SuiSuiShou.CIC.Infor
+  commentId: N:SuiSuiShou.CIC.Infor
+  name: SuiSuiShou.CIC.Infor
+  nameWithType: SuiSuiShou.CIC.Infor
+  fullName: SuiSuiShou.CIC.Infor
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Infor
+    name: Infor
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Infor
+    name: Infor
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SuiSuiShou.CIC.Infor.FileInfor[]
+  isExternal: true
+  name: FileInfor[]
+  nameWithType: FileInfor[]
+  fullName: SuiSuiShou.CIC.Infor.FileInfor[]
+  nameWithType.vb: FileInfor()
+  fullName.vb: SuiSuiShou.CIC.Infor.FileInfor()
+  name.vb: FileInfor()
+  spec.csharp:
+  - uid: SuiSuiShou.CIC.Infor.FileInfor
+    name: FileInfor
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: SuiSuiShou.CIC.Infor.FileInfor
+    name: FileInfor
+  - name: (
+  - name: )
+- uid: System.Int32[]
+  isExternal: true
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: (
+  - name: )
+- uid: SuiSuiShou.CIC.Infor.CaptureInfor.#ctor*
+  commentId: Overload:SuiSuiShou.CIC.Infor.CaptureInfor.#ctor
+  name: CaptureInfor
+  nameWithType: CaptureInfor.CaptureInfor
+  fullName: SuiSuiShou.CIC.Infor.CaptureInfor.CaptureInfor
+  nameWithType.vb: CaptureInfor.New
+  fullName.vb: SuiSuiShou.CIC.Infor.CaptureInfor.New
+  name.vb: New

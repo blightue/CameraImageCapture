@@ -1,0 +1,866 @@
+### YamlMime:ManagedReference
+items:
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  commentId: T:SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  id: ICameraImageCaptureCore
+  parent: SuiSuiShou.CIC.Core
+  children:
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileInfors
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileName
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageFormat
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageResolution
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsImageSerial
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsLogCap
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsOverrideCameraResolution
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SaveFolderPath
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.TargetCamera
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.WriteType
+  langs:
+  - csharp
+  - vb
+  name: ICameraImageCaptureCore
+  nameWithType: ICameraImageCaptureCore
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  type: Interface
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: ICameraImageCaptureCore
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 17
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  syntax:
+    content: public interface ICameraImageCaptureCore
+    content.vb: Public Interface ICameraImageCaptureCore
+  extensionMethods:
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(UnityEngine.Camera,UnityEngine.Vector2Int,System.Int32)
+  - SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(System.String,System.String,UnityEngine.Texture2D)
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageResolution
+  commentId: P:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageResolution
+  id: ImageResolution
+  parent: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  langs:
+  - csharp
+  - vb
+  name: ImageResolution
+  nameWithType: ICameraImageCaptureCore.ImageResolution
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageResolution
+  type: Property
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: ImageResolution
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 22
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nCapture image resolution\n"
+  example: []
+  syntax:
+    content: Vector2Int ImageResolution { get; set; }
+    parameters: []
+    return:
+      type: UnityEngine.Vector2Int
+    content.vb: Property ImageResolution As Vector2Int
+  overload: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageResolution*
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileInfors
+  commentId: P:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileInfors
+  id: FileInfors
+  parent: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  langs:
+  - csharp
+  - vb
+  name: FileInfors
+  nameWithType: ICameraImageCaptureCore.FileInfors
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileInfors
+  type: Property
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: FileInfors
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 26
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nFileInfor for log image sequence\n"
+  example: []
+  syntax:
+    content: Dictionary<FileInfor, int> FileInfors { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{SuiSuiShou.CIC.Infor.FileInfor,System.Int32}
+    content.vb: Property FileInfors As Dictionary(Of FileInfor, Integer)
+  overload: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileInfors*
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.TargetCamera
+  commentId: P:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.TargetCamera
+  id: TargetCamera
+  parent: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  langs:
+  - csharp
+  - vb
+  name: TargetCamera
+  nameWithType: ICameraImageCaptureCore.TargetCamera
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.TargetCamera
+  type: Property
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: TargetCamera
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 30
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nTarget camera for capturing\n"
+  example: []
+  syntax:
+    content: Camera TargetCamera { get; set; }
+    parameters: []
+    return:
+      type: UnityEngine.Camera
+    content.vb: Property TargetCamera As Camera
+  overload: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.TargetCamera*
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.WriteType
+  commentId: P:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.WriteType
+  id: WriteType
+  parent: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  langs:
+  - csharp
+  - vb
+  name: WriteType
+  nameWithType: ICameraImageCaptureCore.WriteType
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.WriteType
+  type: Property
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: WriteType
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 35
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nImage file write type\n"
+  example: []
+  syntax:
+    content: WriteFileType WriteType { get; set; }
+    parameters: []
+    return:
+      type: SuiSuiShou.CIC.Data.WriteFileType
+    content.vb: Property WriteType As WriteFileType
+  overload: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.WriteType*
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageFormat
+  commentId: P:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageFormat
+  id: ImageFormat
+  parent: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  langs:
+  - csharp
+  - vb
+  name: ImageFormat
+  nameWithType: ICameraImageCaptureCore.ImageFormat
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageFormat
+  type: Property
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: ImageFormat
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 39
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nImage type\n"
+  example: []
+  syntax:
+    content: ImageFormat ImageFormat { get; set; }
+    parameters: []
+    return:
+      type: SuiSuiShou.CIC.Core.ImageFormat
+    content.vb: Property ImageFormat As ImageFormat
+  overload: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageFormat*
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsLogCap
+  commentId: P:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsLogCap
+  id: IsLogCap
+  parent: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  langs:
+  - csharp
+  - vb
+  name: IsLogCap
+  nameWithType: ICameraImageCaptureCore.IsLogCap
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsLogCap
+  type: Property
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: IsLogCap
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 44
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nTrue for logging capture status\n"
+  example: []
+  syntax:
+    content: bool IsLogCap { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property IsLogCap As Boolean
+  overload: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsLogCap*
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsImageSerial
+  commentId: P:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsImageSerial
+  id: IsImageSerial
+  parent: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  langs:
+  - csharp
+  - vb
+  name: IsImageSerial
+  nameWithType: ICameraImageCaptureCore.IsImageSerial
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsImageSerial
+  type: Property
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: IsImageSerial
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 48
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nTrue for sequential image file name\n"
+  example: []
+  syntax:
+    content: bool IsImageSerial { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property IsImageSerial As Boolean
+  overload: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsImageSerial*
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsOverrideCameraResolution
+  commentId: P:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsOverrideCameraResolution
+  id: IsOverrideCameraResolution
+  parent: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  langs:
+  - csharp
+  - vb
+  name: IsOverrideCameraResolution
+  nameWithType: ICameraImageCaptureCore.IsOverrideCameraResolution
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsOverrideCameraResolution
+  type: Property
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: IsOverrideCameraResolution
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 52
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nTrue for changing ImageResolution in editor\n"
+  example: []
+  syntax:
+    content: bool IsOverrideCameraResolution { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property IsOverrideCameraResolution As Boolean
+  overload: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsOverrideCameraResolution*
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SaveFolderPath
+  commentId: P:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SaveFolderPath
+  id: SaveFolderPath
+  parent: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  langs:
+  - csharp
+  - vb
+  name: SaveFolderPath
+  nameWithType: ICameraImageCaptureCore.SaveFolderPath
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SaveFolderPath
+  type: Property
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: SaveFolderPath
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 57
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nFold path for image file to writing\n"
+  example: []
+  syntax:
+    content: string SaveFolderPath { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property SaveFolderPath As String
+  overload: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SaveFolderPath*
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileName
+  commentId: P:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileName
+  id: FileName
+  parent: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+  langs:
+  - csharp
+  - vb
+  name: FileName
+  nameWithType: ICameraImageCaptureCore.FileName
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileName
+  type: Property
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: FileName
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 61
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  summary: "\nImage file name\n"
+  example: []
+  syntax:
+    content: string FileName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property FileName As String
+  overload: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileName*
+references:
+- uid: SuiSuiShou.CIC.Core
+  commentId: N:SuiSuiShou.CIC.Core
+  name: SuiSuiShou.CIC.Core
+  nameWithType: SuiSuiShou.CIC.Core
+  fullName: SuiSuiShou.CIC.Core
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Core
+    name: Core
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Core
+    name: Core
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage
+  commentId: M:SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore)
+  parent: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+  definition: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore)
+  name: CaptureAndSaveImage(ICameraImageCaptureCore)
+  nameWithType: CameraImageCaptureCoreMethod.CaptureAndSaveImage(ICameraImageCaptureCore)
+  fullName: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore)
+  spec.csharp:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore)
+    name: CaptureAndSaveImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: )
+  spec.vb:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore)
+    name: CaptureAndSaveImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: )
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(UnityEngine.Camera,UnityEngine.Vector2Int,System.Int32)
+  commentId: M:SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,UnityEngine.Camera,UnityEngine.Vector2Int,System.Int32)
+  parent: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+  definition: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,UnityEngine.Camera,UnityEngine.Vector2Int,System.Int32)
+  name: CaptureImage(ICameraImageCaptureCore, Camera, Vector2Int, int)
+  nameWithType: CameraImageCaptureCoreMethod.CaptureImage(ICameraImageCaptureCore, Camera, Vector2Int, int)
+  fullName: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore, UnityEngine.Camera, UnityEngine.Vector2Int, int)
+  nameWithType.vb: CameraImageCaptureCoreMethod.CaptureImage(ICameraImageCaptureCore, Camera, Vector2Int, Integer)
+  fullName.vb: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore, UnityEngine.Camera, UnityEngine.Vector2Int, Integer)
+  name.vb: CaptureImage(ICameraImageCaptureCore, Camera, Vector2Int, Integer)
+  spec.csharp:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,UnityEngine.Camera,UnityEngine.Vector2Int,System.Int32)
+    name: CaptureImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Camera
+    name: Camera
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector2Int
+    name: Vector2Int
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,UnityEngine.Camera,UnityEngine.Vector2Int,System.Int32)
+    name: CaptureImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Camera
+    name: Camera
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector2Int
+    name: Vector2Int
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: )
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(System.String,System.String,UnityEngine.Texture2D)
+  commentId: M:SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,System.String,System.String,UnityEngine.Texture2D)
+  parent: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+  definition: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,System.String,System.String,UnityEngine.Texture2D)
+  name: StartSaveImage(ICameraImageCaptureCore, string, string, Texture2D)
+  nameWithType: CameraImageCaptureCoreMethod.StartSaveImage(ICameraImageCaptureCore, string, string, Texture2D)
+  fullName: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore, string, string, UnityEngine.Texture2D)
+  nameWithType.vb: CameraImageCaptureCoreMethod.StartSaveImage(ICameraImageCaptureCore, String, String, Texture2D)
+  fullName.vb: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore, String, String, UnityEngine.Texture2D)
+  name.vb: StartSaveImage(ICameraImageCaptureCore, String, String, Texture2D)
+  spec.csharp:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,System.String,System.String,UnityEngine.Texture2D)
+    name: StartSaveImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,System.String,System.String,UnityEngine.Texture2D)
+    name: StartSaveImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+- uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore)
+  commentId: M:SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore)
+  name: CaptureAndSaveImage(ICameraImageCaptureCore)
+  nameWithType: CameraImageCaptureCoreMethod.CaptureAndSaveImage(ICameraImageCaptureCore)
+  fullName: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore)
+  spec.csharp:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore)
+    name: CaptureAndSaveImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: )
+  spec.vb:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureAndSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore)
+    name: CaptureAndSaveImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: )
+- uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+  commentId: T:SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+  parent: SuiSuiShou.CIC.Core
+  name: CameraImageCaptureCoreMethod
+  nameWithType: CameraImageCaptureCoreMethod
+  fullName: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod
+- uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,UnityEngine.Camera,UnityEngine.Vector2Int,System.Int32)
+  commentId: M:SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,UnityEngine.Camera,UnityEngine.Vector2Int,System.Int32)
+  isExternal: true
+  name: CaptureImage(ICameraImageCaptureCore, Camera, Vector2Int, int)
+  nameWithType: CameraImageCaptureCoreMethod.CaptureImage(ICameraImageCaptureCore, Camera, Vector2Int, int)
+  fullName: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore, UnityEngine.Camera, UnityEngine.Vector2Int, int)
+  nameWithType.vb: CameraImageCaptureCoreMethod.CaptureImage(ICameraImageCaptureCore, Camera, Vector2Int, Integer)
+  fullName.vb: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore, UnityEngine.Camera, UnityEngine.Vector2Int, Integer)
+  name.vb: CaptureImage(ICameraImageCaptureCore, Camera, Vector2Int, Integer)
+  spec.csharp:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,UnityEngine.Camera,UnityEngine.Vector2Int,System.Int32)
+    name: CaptureImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Camera
+    name: Camera
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector2Int
+    name: Vector2Int
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.CaptureImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,UnityEngine.Camera,UnityEngine.Vector2Int,System.Int32)
+    name: CaptureImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Camera
+    name: Camera
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Vector2Int
+    name: Vector2Int
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: )
+- uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,System.String,System.String,UnityEngine.Texture2D)
+  commentId: M:SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,System.String,System.String,UnityEngine.Texture2D)
+  isExternal: true
+  name: StartSaveImage(ICameraImageCaptureCore, string, string, Texture2D)
+  nameWithType: CameraImageCaptureCoreMethod.StartSaveImage(ICameraImageCaptureCore, string, string, Texture2D)
+  fullName: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore, string, string, UnityEngine.Texture2D)
+  nameWithType.vb: CameraImageCaptureCoreMethod.StartSaveImage(ICameraImageCaptureCore, String, String, Texture2D)
+  fullName.vb: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore, String, String, UnityEngine.Texture2D)
+  name.vb: StartSaveImage(ICameraImageCaptureCore, String, String, Texture2D)
+  spec.csharp:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,System.String,System.String,UnityEngine.Texture2D)
+    name: StartSaveImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: SuiSuiShou.CIC.Core.CameraImageCaptureCoreMethod.StartSaveImage(SuiSuiShou.CIC.Core.ICameraImageCaptureCore,System.String,System.String,UnityEngine.Texture2D)
+    name: StartSaveImage
+  - name: (
+  - uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore
+    name: ICameraImageCaptureCore
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: UnityEngine.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageResolution*
+  commentId: Overload:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageResolution
+  name: ImageResolution
+  nameWithType: ICameraImageCaptureCore.ImageResolution
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageResolution
+- uid: UnityEngine.Vector2Int
+  commentId: T:UnityEngine.Vector2Int
+  parent: UnityEngine
+  isExternal: true
+  name: Vector2Int
+  nameWithType: Vector2Int
+  fullName: UnityEngine.Vector2Int
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileInfors*
+  commentId: Overload:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileInfors
+  name: FileInfors
+  nameWithType: ICameraImageCaptureCore.FileInfors
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileInfors
+- uid: System.Collections.Generic.Dictionary{SuiSuiShou.CIC.Infor.FileInfor,System.Int32}
+  commentId: T:System.Collections.Generic.Dictionary{SuiSuiShou.CIC.Infor.FileInfor,System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<FileInfor, int>
+  nameWithType: Dictionary<FileInfor, int>
+  fullName: System.Collections.Generic.Dictionary<SuiSuiShou.CIC.Infor.FileInfor, int>
+  nameWithType.vb: Dictionary(Of FileInfor, Integer)
+  fullName.vb: System.Collections.Generic.Dictionary(Of SuiSuiShou.CIC.Infor.FileInfor, Integer)
+  name.vb: Dictionary(Of FileInfor, Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - uid: SuiSuiShou.CIC.Infor.FileInfor
+    name: FileInfor
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: SuiSuiShou.CIC.Infor.FileInfor
+    name: FileInfor
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.TargetCamera*
+  commentId: Overload:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.TargetCamera
+  name: TargetCamera
+  nameWithType: ICameraImageCaptureCore.TargetCamera
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.TargetCamera
+- uid: UnityEngine.Camera
+  commentId: T:UnityEngine.Camera
+  parent: UnityEngine
+  isExternal: true
+  name: Camera
+  nameWithType: Camera
+  fullName: UnityEngine.Camera
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.WriteType*
+  commentId: Overload:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.WriteType
+  name: WriteType
+  nameWithType: ICameraImageCaptureCore.WriteType
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.WriteType
+- uid: SuiSuiShou.CIC.Data.WriteFileType
+  commentId: T:SuiSuiShou.CIC.Data.WriteFileType
+  parent: SuiSuiShou.CIC.Data
+  name: WriteFileType
+  nameWithType: WriteFileType
+  fullName: SuiSuiShou.CIC.Data.WriteFileType
+- uid: SuiSuiShou.CIC.Data
+  commentId: N:SuiSuiShou.CIC.Data
+  name: SuiSuiShou.CIC.Data
+  nameWithType: SuiSuiShou.CIC.Data
+  fullName: SuiSuiShou.CIC.Data
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Data
+    name: Data
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Data
+    name: Data
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageFormat*
+  commentId: Overload:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageFormat
+  name: ImageFormat
+  nameWithType: ICameraImageCaptureCore.ImageFormat
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.ImageFormat
+- uid: SuiSuiShou.CIC.Core.ImageFormat
+  commentId: T:SuiSuiShou.CIC.Core.ImageFormat
+  parent: SuiSuiShou.CIC.Core
+  name: ImageFormat
+  nameWithType: ImageFormat
+  fullName: SuiSuiShou.CIC.Core.ImageFormat
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsLogCap*
+  commentId: Overload:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsLogCap
+  name: IsLogCap
+  nameWithType: ICameraImageCaptureCore.IsLogCap
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsLogCap
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsImageSerial*
+  commentId: Overload:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsImageSerial
+  name: IsImageSerial
+  nameWithType: ICameraImageCaptureCore.IsImageSerial
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsImageSerial
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsOverrideCameraResolution*
+  commentId: Overload:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsOverrideCameraResolution
+  name: IsOverrideCameraResolution
+  nameWithType: ICameraImageCaptureCore.IsOverrideCameraResolution
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.IsOverrideCameraResolution
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SaveFolderPath*
+  commentId: Overload:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SaveFolderPath
+  name: SaveFolderPath
+  nameWithType: ICameraImageCaptureCore.SaveFolderPath
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.SaveFolderPath
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileName*
+  commentId: Overload:SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileName
+  name: FileName
+  nameWithType: ICameraImageCaptureCore.FileName
+  fullName: SuiSuiShou.CIC.Core.ICameraImageCaptureCore.FileName

@@ -1,0 +1,425 @@
+### YamlMime:ManagedReference
+items:
+- uid: SuiSuiShou.CIC.Infor.FileInfor
+  commentId: T:SuiSuiShou.CIC.Infor.FileInfor
+  id: FileInfor
+  parent: SuiSuiShou.CIC.Infor
+  children:
+  - SuiSuiShou.CIC.Infor.FileInfor.#ctor(System.String,System.String,SuiSuiShou.CIC.Core.ImageFormat)
+  - SuiSuiShou.CIC.Infor.FileInfor.fileName
+  - SuiSuiShou.CIC.Infor.FileInfor.folderPath
+  - SuiSuiShou.CIC.Infor.FileInfor.imageFormat
+  langs:
+  - csharp
+  - vb
+  name: FileInfor
+  nameWithType: FileInfor
+  fullName: SuiSuiShou.CIC.Infor.FileInfor
+  type: Struct
+  source:
+    remote:
+      path: RunTime/CaptureInforManager.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: FileInfor
+    path: ../../CameraImageCapture/RunTime/CaptureInforManager.cs
+    startLine: 189
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Infor
+  summary: "\nSequenced Capture files information\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public struct FileInfor
+    content.vb: >-
+      <Serializable>
+
+      Public Structure FileInfor
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: SuiSuiShou.CIC.Infor.FileInfor.folderPath
+  commentId: F:SuiSuiShou.CIC.Infor.FileInfor.folderPath
+  id: folderPath
+  parent: SuiSuiShou.CIC.Infor.FileInfor
+  langs:
+  - csharp
+  - vb
+  name: folderPath
+  nameWithType: FileInfor.folderPath
+  fullName: SuiSuiShou.CIC.Infor.FileInfor.folderPath
+  type: Field
+  source:
+    remote:
+      path: RunTime/CaptureInforManager.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: folderPath
+    path: ../../CameraImageCapture/RunTime/CaptureInforManager.cs
+    startLine: 192
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Infor
+  syntax:
+    content: public string folderPath
+    return:
+      type: System.String
+    content.vb: Public folderPath As String
+- uid: SuiSuiShou.CIC.Infor.FileInfor.fileName
+  commentId: F:SuiSuiShou.CIC.Infor.FileInfor.fileName
+  id: fileName
+  parent: SuiSuiShou.CIC.Infor.FileInfor
+  langs:
+  - csharp
+  - vb
+  name: fileName
+  nameWithType: FileInfor.fileName
+  fullName: SuiSuiShou.CIC.Infor.FileInfor.fileName
+  type: Field
+  source:
+    remote:
+      path: RunTime/CaptureInforManager.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: fileName
+    path: ../../CameraImageCapture/RunTime/CaptureInforManager.cs
+    startLine: 193
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Infor
+  syntax:
+    content: public string fileName
+    return:
+      type: System.String
+    content.vb: Public fileName As String
+- uid: SuiSuiShou.CIC.Infor.FileInfor.imageFormat
+  commentId: F:SuiSuiShou.CIC.Infor.FileInfor.imageFormat
+  id: imageFormat
+  parent: SuiSuiShou.CIC.Infor.FileInfor
+  langs:
+  - csharp
+  - vb
+  name: imageFormat
+  nameWithType: FileInfor.imageFormat
+  fullName: SuiSuiShou.CIC.Infor.FileInfor.imageFormat
+  type: Field
+  source:
+    remote:
+      path: RunTime/CaptureInforManager.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: imageFormat
+    path: ../../CameraImageCapture/RunTime/CaptureInforManager.cs
+    startLine: 194
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Infor
+  syntax:
+    content: public ImageFormat imageFormat
+    return:
+      type: SuiSuiShou.CIC.Core.ImageFormat
+    content.vb: Public imageFormat As ImageFormat
+- uid: SuiSuiShou.CIC.Infor.FileInfor.#ctor(System.String,System.String,SuiSuiShou.CIC.Core.ImageFormat)
+  commentId: M:SuiSuiShou.CIC.Infor.FileInfor.#ctor(System.String,System.String,SuiSuiShou.CIC.Core.ImageFormat)
+  id: '#ctor(System.String,System.String,SuiSuiShou.CIC.Core.ImageFormat)'
+  parent: SuiSuiShou.CIC.Infor.FileInfor
+  langs:
+  - csharp
+  - vb
+  name: FileInfor(string, string, ImageFormat)
+  nameWithType: FileInfor.FileInfor(string, string, ImageFormat)
+  fullName: SuiSuiShou.CIC.Infor.FileInfor.FileInfor(string, string, SuiSuiShou.CIC.Core.ImageFormat)
+  type: Constructor
+  source:
+    remote:
+      path: RunTime/CaptureInforManager.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: .ctor
+    path: ../../CameraImageCapture/RunTime/CaptureInforManager.cs
+    startLine: 196
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Infor
+  syntax:
+    content: public FileInfor(string folderPath, string fileName, ImageFormat imageFormat)
+    parameters:
+    - id: folderPath
+      type: System.String
+    - id: fileName
+      type: System.String
+    - id: imageFormat
+      type: SuiSuiShou.CIC.Core.ImageFormat
+    content.vb: Public Sub New(folderPath As String, fileName As String, imageFormat As ImageFormat)
+  overload: SuiSuiShou.CIC.Infor.FileInfor.#ctor*
+  nameWithType.vb: FileInfor.New(String, String, ImageFormat)
+  fullName.vb: SuiSuiShou.CIC.Infor.FileInfor.New(String, String, SuiSuiShou.CIC.Core.ImageFormat)
+  name.vb: New(String, String, ImageFormat)
+references:
+- uid: SuiSuiShou.CIC.Infor
+  commentId: N:SuiSuiShou.CIC.Infor
+  name: SuiSuiShou.CIC.Infor
+  nameWithType: SuiSuiShou.CIC.Infor
+  fullName: SuiSuiShou.CIC.Infor
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Infor
+    name: Infor
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Infor
+    name: Infor
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: SuiSuiShou.CIC.Core.ImageFormat
+  commentId: T:SuiSuiShou.CIC.Core.ImageFormat
+  parent: SuiSuiShou.CIC.Core
+  name: ImageFormat
+  nameWithType: ImageFormat
+  fullName: SuiSuiShou.CIC.Core.ImageFormat
+- uid: SuiSuiShou.CIC.Core
+  commentId: N:SuiSuiShou.CIC.Core
+  name: SuiSuiShou.CIC.Core
+  nameWithType: SuiSuiShou.CIC.Core
+  fullName: SuiSuiShou.CIC.Core
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Core
+    name: Core
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Core
+    name: Core
+- uid: SuiSuiShou.CIC.Infor.FileInfor.#ctor*
+  commentId: Overload:SuiSuiShou.CIC.Infor.FileInfor.#ctor
+  name: FileInfor
+  nameWithType: FileInfor.FileInfor
+  fullName: SuiSuiShou.CIC.Infor.FileInfor.FileInfor
+  nameWithType.vb: FileInfor.New
+  fullName.vb: SuiSuiShou.CIC.Infor.FileInfor.New
+  name.vb: New

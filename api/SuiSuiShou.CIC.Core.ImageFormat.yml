@@ -1,0 +1,149 @@
+### YamlMime:ManagedReference
+items:
+- uid: SuiSuiShou.CIC.Core.ImageFormat
+  commentId: T:SuiSuiShou.CIC.Core.ImageFormat
+  id: ImageFormat
+  parent: SuiSuiShou.CIC.Core
+  children:
+  - SuiSuiShou.CIC.Core.ImageFormat.jpg
+  - SuiSuiShou.CIC.Core.ImageFormat.png
+  - SuiSuiShou.CIC.Core.ImageFormat.tga
+  langs:
+  - csharp
+  - vb
+  name: ImageFormat
+  nameWithType: ImageFormat
+  fullName: SuiSuiShou.CIC.Core.ImageFormat
+  type: Enum
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: ImageFormat
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 9
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  syntax:
+    content: >-
+      [Serializable]
+
+      public enum ImageFormat
+    content.vb: >-
+      <Serializable>
+
+      Public Enum ImageFormat
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: SuiSuiShou.CIC.Core.ImageFormat.jpg
+  commentId: F:SuiSuiShou.CIC.Core.ImageFormat.jpg
+  id: jpg
+  parent: SuiSuiShou.CIC.Core.ImageFormat
+  langs:
+  - csharp
+  - vb
+  name: jpg
+  nameWithType: ImageFormat.jpg
+  fullName: SuiSuiShou.CIC.Core.ImageFormat.jpg
+  type: Field
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: jpg
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 12
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  syntax:
+    content: jpg = 0
+    return:
+      type: SuiSuiShou.CIC.Core.ImageFormat
+- uid: SuiSuiShou.CIC.Core.ImageFormat.png
+  commentId: F:SuiSuiShou.CIC.Core.ImageFormat.png
+  id: png
+  parent: SuiSuiShou.CIC.Core.ImageFormat
+  langs:
+  - csharp
+  - vb
+  name: png
+  nameWithType: ImageFormat.png
+  fullName: SuiSuiShou.CIC.Core.ImageFormat.png
+  type: Field
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: png
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 13
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  syntax:
+    content: png = 1
+    return:
+      type: SuiSuiShou.CIC.Core.ImageFormat
+- uid: SuiSuiShou.CIC.Core.ImageFormat.tga
+  commentId: F:SuiSuiShou.CIC.Core.ImageFormat.tga
+  id: tga
+  parent: SuiSuiShou.CIC.Core.ImageFormat
+  langs:
+  - csharp
+  - vb
+  name: tga
+  nameWithType: ImageFormat.tga
+  fullName: SuiSuiShou.CIC.Core.ImageFormat.tga
+  type: Field
+  source:
+    remote:
+      path: RunTime/ICameraImageCaptureCore.cs
+      branch: main
+      repo: https://github.com/blightue/UnityCameraImageCapture.git
+    id: tga
+    path: ../../CameraImageCapture/RunTime/ICameraImageCaptureCore.cs
+    startLine: 14
+  assemblies:
+  - suisuishou.cameraimagecapture
+  namespace: SuiSuiShou.CIC.Core
+  syntax:
+    content: tga = 2
+    return:
+      type: SuiSuiShou.CIC.Core.ImageFormat
+references:
+- uid: SuiSuiShou.CIC.Core
+  commentId: N:SuiSuiShou.CIC.Core
+  name: SuiSuiShou.CIC.Core
+  nameWithType: SuiSuiShou.CIC.Core
+  fullName: SuiSuiShou.CIC.Core
+  spec.csharp:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Core
+    name: Core
+  spec.vb:
+  - uid: SuiSuiShou
+    name: SuiSuiShou
+  - name: .
+  - uid: SuiSuiShou.CIC
+    name: CIC
+  - name: .
+  - uid: SuiSuiShou.CIC.Core
+    name: Core
+- uid: SuiSuiShou.CIC.Core.ImageFormat
+  commentId: T:SuiSuiShou.CIC.Core.ImageFormat
+  parent: SuiSuiShou.CIC.Core
+  name: ImageFormat
+  nameWithType: ImageFormat
+  fullName: SuiSuiShou.CIC.Core.ImageFormat
