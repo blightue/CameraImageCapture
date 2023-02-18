@@ -1,0 +1,4 @@
+- name: Installation instructions
+  href: install.md
+- name: Quick Start
+  href: quickstart.md
