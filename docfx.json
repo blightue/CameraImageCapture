@@ -6,7 +6,7 @@
           "files": [
             "suisuishou.cameraimagecapture.csproj"
           ],
-		  "src": "../../../"
+		  "src": "../../"
         }
       ],
       "dest": "api",
