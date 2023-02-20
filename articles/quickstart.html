@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Quick Start </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Quick Start ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="quick-start">Quick Start</h2>
+
+<h3 id="version-050-update">Version 0.5.0 Update:</h3>
+<p>Recommend use component <strong>Capture with config</strong></p>
+<p>Create a config asset by click the plus button in the Project window and follow <code>Camera Image Capture/Capturer config</code></p>
+<p><img src="../images/CaptureConfig.gif" alt="Config Gif"></p>
+<h3 id="editor">Editor</h3>
+<h4 id="component">Component</h4>
+<ol>
+<li><p>Add component <code>CameraImageCapture</code> to a <code>GameObject</code> via <code>Camera Image Capture/CameraImageCapture</code></p>
+</li>
+<li><p>Config <code>CameraImageCapture</code> value in the Inspector.</p>
+<ul>
+<li><p><strong>Target Camera</strong> : Target camera for capture</p>
+</li>
+<li><p><strong>File Name</strong> : The name of captured image file</p>
+</li>
+<li><p><strong>Export folder</strong> : The folder for the captured image file.</p>
+</li>
+<li><p><strong>Image serialized</strong> : Is the image file name serialized. If set to true, the file name will be <strong>[fileName]-0.jpg</strong> <strong>[fileName]-1.jpg</strong> ...</p>
+</li>
+<li><p><strong>Is Log Capture</strong> : Is log capture information when image captured</p>
+</li>
+<li><p><strong>Write type</strong> :</p>
+<ul>
+<li>Main Thread: Write the file in main thread. It will block the main thread</li>
+<li>Async: Write the file asynchronous. <strong>Caution use this type in MonoBehavior.Update() function</strong></li>
+</ul>
+</li>
+<li><p><strong>Image format</strong> : PNG JPG TGA</p>
+</li>
+<li><p><strong>Is Override Camera Resolution</strong> : False to set your own image resolution. Image will follow target camera <strong>FOV Axis</strong></p>
+</li>
+</ul>
+</li>
+<li><p>Click <strong>Capture and save</strong> button for capturing</p>
+</li>
+</ol>
+<h4 id="editorwindow">EditorWindow</h4>
+<ol>
+<li><p>Open <code>Camera Image Capture</code> window via <code>Tools/Camera Image Capture/Capturer</code></p>
+</li>
+<li><p>Add and Config <code>CaptureConfig</code> value in the Inspector.</p>
+</li>
+<li><p>Click <strong>Capture and save</strong> button for capturing</p>
+</li>
+</ol>
+<h3 id="runtime">Runtime</h3>
+<h4 id="static-singleton">Static Singleton</h4>
+<pre><code class="lang-c#">using SuiSuiShou.CIC.Core;
+using UnityEngine;
+
+public class SampleScript : MonoBehaviour
+{
+    void Start()
+    {
+        Photographer.IsImageSerial = false;
+        Photographer.ImageResolution = new Vector2Int(1920, 1080);
+        Photographer.CaptureAndSaveImage();
+    }
+}
+</code></pre>
+<h4 id="component-1">Component</h4>
+<ol>
+<li><p>Assign the <code>CameraImageCapture</code> component  in your code</p>
+</li>
+<li><p>Call <code>CameraImageCapture.CaptureAndSaveImage()</code></p>
+</li>
+<li><p><code>CameraImageCapture</code> fields can changed during runtime</p>
+<p><strong>Code Sample</strong></p>
+</li>
+</ol>
+<pre><code class="lang-c#">using SuiSuiShou.CIC.Core;
+using UnityEngine;
+
+public class SampleScript : MonoBehaviour
+{
+    public CameraImageCapture cic;
+
+    private void Start()
+    {
+        cic.FileName = &quot;Sample&quot;;
+        cic.ImageResolution = new Vector2Int(1920, 1080);
+        cic.CaptureAndSaveImage();
+    }
+}
+</code></pre>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/blightue/CameraImageCapture/blob/docfx/articles/quickstart.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
