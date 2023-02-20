@@ -1,6 +1,6 @@
 # Unity Camera Image Capture
 
-![version](https://badgen.net/badge/version/0.6.5/orange) ![license](https://badgen.net/github/license/blightue/unitycameraImagecapture)
+![version](https://img.shields.io/github/package-json/v/blightue/unitycameraImagecapture) ![license](https://img.shields.io/github/license/blightue/unitycameraImagecapture)
 
 Capture camera image and save to a specified path.
 
